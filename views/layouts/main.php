@@ -18,8 +18,17 @@
     <body>
         <?php $this->beginBody(); ?>
 
-        <div class="sidebar">
+        <div class="hidden-from-desktop">
+            <div class="nav-toggle menu-icon-open">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="81" height="81" viewBox="0 0 81 81" fill="none"><rect opacity="0.6" width="81" height="81" fill="#F4F4F4"/><rect x="20.5693" y="22.9911" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/><rect x="20.5693" y="37.3409" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/><rect x="20.5693" y="53.1256" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/></svg></div>
+            </div>
+        </div>
+
+        <div class="sidebar mobile-navigation">
             <div class="topbar" id="topbar-first">
+                <div class="hidden-from-desktop nav-toggle mobile-icon">
+                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none"><rect x="2.11133" width="48.7919" height="2.88076" rx="1.44038" transform="rotate(45.0205 2.11133 0)" fill="#B2B1B1"/><rect width="48.7919" height="2.88076" rx="1.44038" transform="matrix(-0.706854 0.70736 0.70736 0.706854 34.5625 0)" fill="#B2B1B1"/></svg></div>
+                </div>
                 <div class="container">
                     <div class="item">
                         <a href="<?= Url::to(['/dashboard/dashboard']); ?>">
