@@ -20,7 +20,7 @@
 
         <div class="hidden-from-desktop">
             <div class="nav-toggle menu-icon-open">
-                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="81" height="81" viewBox="0 0 81 81" fill="none"><rect opacity="0.6" width="81" height="81" fill="#F4F4F4"/><rect x="20.5693" y="22.9911" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/><rect x="20.5693" y="37.3409" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/><rect x="20.5693" y="53.1256" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/></svg></div>
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none"><rect opacity="0.6" width="42" height="42" fill="#F4F4F4"/><rect x="10.666" y="11.9213" width="20.0897" height="1.48812" rx="0.744062" fill="#B2B1B1"/><rect x="10.666" y="19.3619" width="20.0897" height="1.48812" rx="0.744062" fill="#B2B1B1"/><rect x="10.666" y="27.5466" width="20.0897" height="1.48812" rx="0.744062" fill="#B2B1B1"/></svg></div>
             </div>
         </div>
 
