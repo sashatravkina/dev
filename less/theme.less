@@ -3488,11 +3488,12 @@ table td a:hover {
 }
 
 #space-menu-dropdown .input-group-addon {
-    border-radius: 0 4px 4px 0
+    border-radius: unset;
+    border: 2px solid transparent;
 }
 
 #space-menu-dropdown .input-group-addon.focus {
-    border-radius: 0 4px 4px 0;
+    border-radius: unset;
     border: 2px solid @info;
     border-left: 0
 }
@@ -6042,14 +6043,21 @@ ul.tag_input li img {
                     position: absolute;
                     z-index: 1000;
                     right: unset;
-                    left: 100%;
+                    left: calc(100% - 1px);
                     top: 0;
 
                     float: unset;
 
                     min-width: 160px;
-                    max-width: 320px;
-                    width: fit-content;
+
+                    @media @desktop {
+                        max-width: 440px;
+                        width: max-content;
+                    }
+                    @media @mobile {
+                        max-width: 246px;
+                        width: max-content;
+                    }
 
                     padding: 5px 0;
                     margin: 0;
@@ -6064,6 +6072,63 @@ ul.tag_input li img {
                     border-radius: 0;
                     -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
                     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+
+                    li {
+                        a {
+                            text-overflow: unset;
+                            overflow: unset;
+                            white-space: unset;
+                        }
+                    }
+
+                    .dropdown-controls {
+                        margin-right: 10px;
+                        margin-left: 10px;
+                    }
+
+                    .dropdown-header {
+                        @media @desktop {
+                            display: flex;
+                            align-items: center;
+                        }
+                        @media @mobile {
+
+                        }
+
+                        & > * {
+                            &:last-child {
+                                @media @desktop {
+                                    margin-left: auto;
+                                }
+
+                                position: unset;
+                                right: unset;
+                                top: unset;
+                            }
+                        }
+
+                        .dropdown-header-link {
+                            position: unset;
+                            right: unset;
+                            top: unset;
+                        }
+                    }
+                    .media-list {
+                        .media {
+                            .img-space {
+                                left: 22px;
+                                top: 30px;
+                            }
+                            .media-body {
+                                padding-bottom: unset;
+                                width: unset;
+
+                                @media @mobile {
+                                    padding-top: 8px;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .search-menu {
@@ -6071,6 +6136,16 @@ ul.tag_input li img {
 
                     .form-group {
                         margin-bottom: 0;
+                    }
+                }
+
+                &#search-menu-nav {
+                    padding-right: 0;
+                    padding-left: 0;
+
+                    .checksearch {
+                        padding-right: 12px;
+                        padding-left: 12px;
                     }
                 }
             }
