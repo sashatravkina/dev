@@ -1190,6 +1190,19 @@ img {
     margin-bottom: 5px
 }
 
+.panel.members {
+    .panel-body {
+        a.tt {
+            float: left;
+        }
+        & > .bth {
+            float: unset !important;
+            width: 100%;
+            margin-top: 12px;
+        }
+    }
+}
+
 .panel-profile .panel-profile-header {
     position: relative;
 }
@@ -2036,7 +2049,8 @@ div.required.has-error>label:after {
 
 .radio label,
 .checkbox label {
-    padding-left: 10px
+    padding-left: 0;
+    font-size: 14px;
 }
 
 .form-control {
@@ -2359,7 +2373,7 @@ a.label-warning:hover {
     padding: 3px 5px;
     border-radius: 2px;
     font-weight: normal;
-    font-family: 'Futura PT', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 10px !important;
     text-transform: uppercase;
     color: @white;
@@ -4259,7 +4273,7 @@ blockquote {
 
 .wmd-prompt-dialog>div {
     font-size: .8em;
-    font-family: 'Futura PT', sans-serif
+    font-family: 'Montserrat', sans-serif
 }
 
 .wmd-prompt-dialog>form>input[type="text"] {
@@ -4269,7 +4283,7 @@ blockquote {
 
 .wmd-prompt-dialog>form>input[type="button"] {
     border: 1px solid #888888;
-    font-family: 'Futura PT', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: .8em;
     font-weight: bold
 }
@@ -5290,7 +5304,7 @@ img.bounceIn {
     border: 2px solid @default;
     border-radius: 4px;
     color: @font3;
-    font-family: 'Futura PT', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     outline: 0
 }
@@ -5300,7 +5314,7 @@ img.bounceIn {
     border: 2px solid @default;
     border-radius: 4px;
     color: @font3;
-    font-family: 'Futura PT', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px
 }
 
