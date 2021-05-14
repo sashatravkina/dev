@@ -1190,6 +1190,7 @@ img {
     margin-bottom: 5px
 }
 
+.panel.spaces,
 .panel.members {
     .panel-body {
         a.tt {
@@ -1199,6 +1200,13 @@ img {
             float: unset !important;
             width: 100%;
             margin-top: 12px;
+        }
+    }
+}
+.panel.spaces {
+    .panel-body {
+        a.tt {
+            margin-right: 3.73px;
         }
     }
 }
@@ -1292,10 +1300,10 @@ img {
 .panel-profile .panel-profile-header .profile-user-photo-container .profile-user-photo {
 
     @media @desktop {
-        border: 8px solid @info;
+        border: 4px solid @white;
     }
     @media @mobile {
-        border: 4px solid @info;
+        border: 2px solid @white;
     }
 
     background-color: @white;
@@ -3200,6 +3208,10 @@ table td a:hover {
 .wall-entry .content img {
     max-width: 100%
 }
+.wall-entry .content .showMore {
+    font-weight: 500;
+    font-size: 14px;
+}
 
 .wall-entry .media {
     overflow: visible
@@ -3207,8 +3219,6 @@ table td a:hover {
 
 .wall-entry .well {
     margin-bottom: 0;
-
-
 }
 
 .wall-entry .well .comment .show-all-link {
