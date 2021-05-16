@@ -5048,6 +5048,15 @@ img.bounceIn {
     text-align: center
 }
 
+#createmessage-message {
+    .ProseMirror-menubar-wrapper {
+        .ProseMirror {
+            border: 2px solid #EFEFEF;
+            padding-left: 12px;
+        }
+    }
+}
+
 .atwho-view .cur {
     border-left: 3px solid #59d6e4;
     background-color: #f7f7f7 !important
@@ -5312,7 +5321,7 @@ img.bounceIn {
 .select2-container--humhub .select2-selection {
     background-color: @white;
     border: 2px solid @default;
-    border-radius: 4px;
+    border-radius: unset;
     color: @font3;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -5322,7 +5331,7 @@ img.bounceIn {
 .select2-container--humhub .select2-search--dropdown .select2-search__field {
     background-color: @white;
     border: 2px solid @default;
-    border-radius: 4px;
+    border-radius: unset;
     color: @font3;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px
@@ -5516,7 +5525,6 @@ img.bounceIn {
 
 .select2-container--humhub .select2-selection--multiple {
     min-height: 34px;
-    padding: 2px
 }
 
 .select2-container--humhub .select2-selection--multiple .select2-selection__rendered {
@@ -5574,7 +5582,7 @@ img.bounceIn {
 
 .select2-container--humhub .select2-selection--multiple .select2-search--inline .select2-search__field {
     background: transparent;
-    padding: 0 5px;
+    padding: 0 12px;
     width: auto !important;
     height: 32px;
     line-height: 1.42857143;
@@ -6423,6 +6431,9 @@ label.checksearch .caret {
 }
 .wall-entry-body {
     margin-top: 10px;
+}
+.back_button_holder {
+    margin-bottom: 12px;
 }
 .no-space i {
     margin-left: 0;
