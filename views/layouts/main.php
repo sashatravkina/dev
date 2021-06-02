@@ -20,7 +20,9 @@
 
         <div class="hidden-from-desktop">
             <div class="nav-toggle menu-icon-open">
-                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none"><rect opacity="0.6" width="42" height="42" fill="#F4F4F4"/><rect x="10.666" y="11.9213" width="20.0897" height="1.48812" rx="0.744062" fill="#B2B1B1"/><rect x="10.666" y="19.3619" width="20.0897" height="1.48812" rx="0.744062" fill="#B2B1B1"/><rect x="10.666" y="27.5466" width="20.0897" height="1.48812" rx="0.744062" fill="#B2B1B1"/></svg></div>
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="89" height="89" viewBox="0 0 89 89" fill="none"> <g opacity="0.8" filter="url(#filter0_d)"> <rect x="4" width="81" height="81" fill="#F4F4F4"/> </g> <rect x="24.5693" y="22.9911" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/> <rect x="24.5693" y="37.3409" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/> <rect x="24.5693" y="53.1256" width="38.7443" height="2.86995" rx="1.43498" fill="#B2B1B1"/> <defs> <filter id="filter0_d" x="0" y="0" width="89" height="89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feGaussianBlur stdDeviation="2"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/></filter></defs></svg>
+                </div>
             </div>
         </div>
 
