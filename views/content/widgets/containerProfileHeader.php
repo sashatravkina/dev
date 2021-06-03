@@ -1,41 +1,41 @@
 <?php
 
-/* @var $this \humhub\modules\ui\view\components\View */
-/* @var $options array */
-/* @var $title string */
-/* @var $subTitle string */
-/* @var $classPrefix string */
-/* @var $canEdit boolean */
-/* @var $coverCropUrl string */
-/* @var $imageCropUrl string */
-/* @var $coverDeleteUrl string */
-/* @var $imageDeleteUrl string */
-/* @var $imageUploadUrl string */
-/* @var $coverUploadUrl string */
-/* @var $headerControlView string */
-/* @var $coverUploadName string */
-/* @var $imageUploadName string */
+    /* @var $this \humhub\modules\ui\view\components\View */
+    /* @var $options array */
+    /* @var $title string */
+    /* @var $subTitle string */
+    /* @var $classPrefix string */
+    /* @var $canEdit boolean */
+    /* @var $coverCropUrl string */
+    /* @var $imageCropUrl string */
+    /* @var $coverDeleteUrl string */
+    /* @var $imageDeleteUrl string */
+    /* @var $imageUploadUrl string */
+    /* @var $coverUploadUrl string */
+    /* @var $headerControlView string */
+    /* @var $coverUploadName string */
+    /* @var $imageUploadName string */
 
-/* @var $container \humhub\modules\content\components\ContentContainerActiveRecord */
+    /* @var $container \humhub\modules\content\components\ContentContainerActiveRecord */
 
-/**
- * Note: Inline styles have been retained for legacy theme compatibility (prior to v1.4)
- */
+    /**
+     * Note: Inline styles have been retained for legacy theme compatibility (prior to v1.4)
+     */
 
-use humhub\modules\content\assets\ContainerHeaderAsset;
-use humhub\modules\file\widgets\Upload;
-use yii\helpers\Html;
+    use humhub\modules\content\assets\ContainerHeaderAsset;
+    use humhub\modules\file\widgets\Upload;
+    use yii\helpers\Html;
 
-ContainerHeaderAsset::register($this);
+    ContainerHeaderAsset::register($this);
 
-// if the default banner image is displaying change padding to the lower image height
-$bannerProgressBarPadding = $container->getProfileBannerImage()->hasImage() ? '90px 350px' : '50px 350px';
-$bannerUpload = Upload::withName($coverUploadName, ['url' => $coverUploadUrl]);
+    // if the default banner image is displaying change padding to the lower image height
+    $bannerProgressBarPadding = $container->getProfileBannerImage()->hasImage() ? '90px 350px' : '50px 350px';
+    $bannerUpload = Upload::withName($coverUploadName, ['url' => $coverUploadUrl]);
 
-$profileImageUpload = Upload::withName($imageUploadName, ['url' => $imageUploadUrl]);
+    $profileImageUpload = Upload::withName($imageUploadName, ['url' => $imageUploadUrl]);
 
-$profileImageWidth = $container->getProfileImage()->width() - 10;
-$profileImageHeight = $container->getProfileImage()->height() - 10;
+    $profileImageWidth = $container->getProfileImage()->width() - 10;
+    $profileImageHeight = $container->getProfileImage()->height() - 10;
 ?>
 
 <?= Html::beginTag('div', $options) ?>
