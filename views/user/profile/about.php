@@ -40,9 +40,9 @@ $categories = $user->profile->getProfileFieldCategories();
                                     <?= Html::encode(Yii::t($field->getTranslationCategory(), $field->title)) ?>
                                 </label>
                                 <?php if (strtolower($field->title) == 'about'): ?>
-                                    <p class="form-control-static">
+                                    <div class="form-control-static">
                                         <?= RichText::output($field->getUserValue($user, true)) ?>
-                                    </p>
+                                    </div>
                                 <?php else: ?>
                                     <?php if ($field->field_type_class == MarkdownEditor::class): ?>
                                         <p class="form-control-static">

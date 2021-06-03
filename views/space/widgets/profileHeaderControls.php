@@ -19,7 +19,14 @@ use humhub\modules\space\widgets\MembershipButton;
         <div class="controls controls-header pull-right">
             <?= HeaderControls::widget(['widgets' => [
                 [InviteButton::class, ['space' => $container], ['sortOrder' => 10]],
-                [MembershipButton::class, ['space' => $container], ['sortOrder' => 20]],
+                [MembershipButton::class, ['space' => $container], ['sortOrder' => 20]]
+                /*
+                [FollowButton::class, [
+                    'space' => $container,
+                    'followOptions' => ['class' => 'btn btn-default'],
+                    'unfollowOptions' => ['class' => 'btn btn-info']
+                ], ['sortOrder' => 30]]
+                */
             ]]); ?>
             <?= HeaderControlsMenu::widget(['space' => $container]); ?>
         </div>
