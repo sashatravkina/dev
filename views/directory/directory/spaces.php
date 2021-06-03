@@ -46,11 +46,7 @@ use yii\helpers\Url;
             <li>
                 <div class="media">
                     <div class="pull-right">
-                        <?=
-                        MembershipButton::widget([
-                            'space' => $space
-                            ]);
-                        ?>
+                        <?= MembershipButton::widget(['space' => $space]); ?>
                     </div>
 
                     <?= Image::widget([
