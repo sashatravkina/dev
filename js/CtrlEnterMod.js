@@ -1,25 +1,31 @@
- window.humhub.require('ui.additions').register('ctrlEnterSave', '.ProsemirrorEditor', function($match) {
-    $match.on('keydown', function(event) {
-        if(event.ctrlKey && event.key == 'Enter') {
-            event.preventDefault();
-            let form = event.target.closest('form');
+//  window.humhub.require('ui.additions').register('ctrlEnterSave', '.ProsemirrorEditor', function($match) {
+//     $match.on('keydown', function(event) {
+//         console.log("Event: "+event.type+"Ctrl: "+event.ctrlKey+"; Key: " +event.key);
+//         if(event.ctrlKey && event.key == 'Enter') {
+//             event.preventDefault();
+//             event.stopPropagation();
+//             var e = $.Event('keydown');
+//             e.which = 83; // Character 'S'
+//             e.ctrlKey = true;
+//             $(this).trigger(e);
+//             // let form = event.target.closest('form');
 
-            if(!form.length) {
-                return;
-            }
+//             // if(!form.length) {
+//             //     return;
+//             // }
 
-            let input = form.querySelector('.atwho-input');
-            let lastBR = input.querySelector("p:last-child br:last-child");
-            lastBR.remove();
-            lastBR = input.querySelector("p:last-child br:last-child");
-            lastBR.remove();
+//             // // let input = form.querySelector('.atwho-input');
+//             // let lastBR = input.querySelector("p:last-child br:last-child");
+//             // lastBR.remove();
+//             // lastBR = input.querySelector("p:last-child br:last-child");
+//             // lastBR.remove();
 
-			// debugger;
-            input.blur();
-            form.querySelector('[type="submit"]').click();
-        }
-    });
-});
+// 			// debugger;
+//             // input.blur();
+//             // form.querySelector('[type="submit"]').click();
+//         }
+//     });
+// });
 
 // Show-hide search field onclick
 $('#checksearch').click(function() {
