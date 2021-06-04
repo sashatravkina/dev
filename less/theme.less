@@ -4614,10 +4614,16 @@ img.bounceIn {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     overflow: visible;
-    margin-top: -36px;
     background: @white;
     border-radius: 0;
     float: left;
+
+    @media @desktop {
+        margin-top: -28px;
+    }
+    @media @mobile {
+        margin-top: -36px;
+    }
 }
 
 @-moz-document url-prefix() {
@@ -6140,23 +6146,65 @@ ul.tag_input li img {
     #inbox {
         border-radius: unset;
     }
+
     .panel-heading {
-        @media @desktop {
-            padding: 20px 25px;
+        padding-bottom: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 16px;
+
+        .conversation-overview-heading {
+            display: flex;
+
+            .btn-info {
+                padding-bottom: 10px;
+                padding-right: 16px;
+                padding-left: 16px;
+                padding-top: 10px;
+    
+                justify-content: center;
+                align-items: center;
+                display: flex;
+
+                margin-left: auto;
+            }
         }
-        @media @mobile {
-            padding: 12px 16px;
+        .inbox-wrapper {
+            #mail-filter-root {
+                #mail-filter-menu {
+                    .form-group {
+                        margin-bottom: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    .inbox-wrapper {
+        .media-list {
+            li {
+                padding-bottom: 16px;
+                padding-right: 16px;
+                padding-left: 16px;
+                padding-top: 16px;
+            }
+            .mail-link {
+                .media-body {
+                    padding-bottom: unset;
+                }
+            }
         }
     }
 }
 #mail-conversation-root {
     #mail-conversation-header {
-        @media @desktop {
-            padding: 20px 25px;
-        }
-        @media @mobile {
-            padding: 12px 16px;
-        }
+        padding-bottom: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 16px;
+
+        align-items: center;
+        display: flex;
 
         #conversationSettingsButton {
             background: transparent !important;
@@ -6166,38 +6214,83 @@ ul.tag_input li img {
                 font-size: 20px;
             }
         }
+
+        .conversation-head-avatar {
+            margin-right: 8px;
+
+            span {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+        .conversation-head-info {
+            max-width: 70%;
+
+            span {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 1.4;
+                color: @black;
+
+                a {
+                    color: @black !important;
+
+                    &:hover {
+                        color: lighten(@black, 20%) !important;
+                    }
+                }
+            }
+        }
+        .conversation-head-dropdown {
+            margin-left: auto;
+        }
     }
     .conversation-entry-list {
         .media {
             padding-right: unset;
         }
-        .conversation-entry-content {
-            background: #F4F4F4;
-            border-radius: unset;
-    
-            @media @desktop {
-                padding: 20px 25px;
+        .mail-conversation-entry {
+            margin-bottom: 12px;
+            margin-top: unset;
+
+            .conversation-entry-content {
+                background: #F4F4F4;
+                border-radius: unset;
+        
+                @media @desktop {
+                    padding: 20px 25px;
+                }
+                @media @mobile {
+                    padding: 12px 16px;
+                    max-width: unset;
+                }
+        
+                p {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 1.4;
+                    color: #000;
+                }
             }
-            @media @mobile {
-                padding: 12px 16px;
-                max-width: unset;
-            }
+            .conversation-menu {
+                display: block !important;
     
-            p {
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 1.4;
-                color: #000;
+                .conversation-menu-item {
+                    margin-bottom: unset;
+    
+                    .time {
+                        color: #B2B1B1;
+                    }
+                }
             }
         }
     }
     .mail-message-form {
-        @media @desktop {
-            padding: 20px;
-        }
-        @media @mobile {
-            padding: 10px;
-        }
+        padding-bottom: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 16px;
 
         .humhub-ui-richtext {
             border-radius: unset;
@@ -6210,28 +6303,39 @@ ul.tag_input li img {
             padding-top: 12px;
         }
         .reply-button {
+            background-color: @info;
             border-radius: 24px;
 
-            background: @info;
-            color: @white;
+            padding-bottom: 10px;
+            padding-right: 16px;
+            padding-left: 16px;
+            padding-top: 10px;
 
-            padding: 12px 24px;
+            min-height: 44px;
 
-            i {
-                color: @white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            bottom: 16px;
+            right: 16px;
+            margin: 0;
+
+            color: @white !important;
+
+            span {
+                position: absolute;
+                transform: translateY(-50%) translateX(-50%);
+                right: 50%;
+                top: 50%;
+            }
+
+            svg {
+                height: 24px;
             }
 
             &:hover {
-                background: @action;
-            }
-
-            @media @desktop {
-                bottom: 20px;
-                right: 20px;
-            }
-            @media @mobile {
-                bottom: 10px;
-                right: 10px;
+                background-color: @action;
             }
         }
     }
@@ -6607,10 +6711,14 @@ label.checksearch .caret {
                                 background-color: @info;
                                 border-radius: 24px;
 
-                                padding-bottom: 5px;
+                                padding-bottom: 10px;
                                 padding-right: 16px;
                                 padding-left: 16px;
                                 padding-top: 10px;
+
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
 
                                 margin: 0;
 
