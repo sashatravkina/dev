@@ -23,7 +23,7 @@ use humhub\widgets\Link;
 
 <div id="mail-filter-menu" class="clearfix">
     <?php $filterForm = ActiveForm::begin() ?>
-    <?= TextFilterInput::widget(['id' => 'term', 'category' => 'term', 'options' => ['placeholder' => Yii::t('MailModule.base', 'Search')]]) ?>
+        <?= TextFilterInput::widget(['id' => 'term', 'category' => 'term', 'options' => ['placeholder' => Yii::t('MailModule.base', 'Search')]]) ?>
     <?php ActiveForm::end() ?>
 </div>
 <?= Html::endTag('div') ?>
