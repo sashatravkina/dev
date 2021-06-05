@@ -13,7 +13,7 @@ use humhub\modules\directory\widgets\UserTagList;
 use humhub\modules\user\widgets\Image;
 
 ?>
-<div class="panel panel-default">
+<div class="panel panel-default section-member">
 
     <div class="panel-heading">
         <?php if ($group === null) : ?>
@@ -43,19 +43,13 @@ use humhub\modules\user\widgets\Image;
         <?php endif; ?>
     </div>
 
-    <hr>
-
     <ul class="media-list">
         <?php foreach ($users as $user) : ?>
             <li>
                 <div class="media">
-                    <div class="pull-right memberActions">
-                        <?= MemberActionsButton::widget(['user' => $user]); ?>
-                    </div>
-
                     <?= Image::widget([
                         'user' => $user,
-                        'htmlOptions' => ['class' => 'pull-left'],
+                        'htmlOptions' => ['class' => 'media-avatar'],
                         'linkOptions' => ['data-contentcontainer-id' => $user->contentcontainer_id]
                     ]); ?>
                     <div class="media-body">
@@ -63,6 +57,9 @@ use humhub\modules\user\widgets\Image;
                             <?= Html::containerLink($user); ?>
                             <?= UserGroupList::widget(['user' => $user]); ?>
                         </h4>
+                    </div>
+                    <div class="media-actions memberActions">
+                        <?= MemberActionsButton::widget(['user' => $user]); ?>
                     </div>
                 </div>
             </li>
