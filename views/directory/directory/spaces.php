@@ -15,24 +15,18 @@ use humhub\widgets\LinkPager;
 use yii\helpers\Url;
 
 ?>
-<div class="panel panel-default">
+<div class="panel panel-default section-spaces">
 
     <div class="panel-heading">
-        <?= Yii::t('DirectoryModule.base', '<strong>Space</strong> directory'); ?>
+        <?= Yii::t('DirectoryModule.base', '<strong>Список</strong> групп'); ?>
     </div>
 
     <div class="panel-body">
         <?= Html::beginForm(Url::to(['/directory/directory/spaces']), 'get', ['class' => 'form-search']); ?>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div class="form-group form-group-search">
-                    <?= Html::textInput('keyword', $keyword, ['class' => 'form-control form-search', 'placeholder' => Yii::t('DirectoryModule.base', 'search for spaces')]); ?>
-                    <?= Html::submitButton(Yii::t('DirectoryModule.base', 'Search'), ['class' => 'btn btn-default btn-sm form-button-search']); ?>
-                </div>
+            <div class="form-group form-group-search">
+                <?= Html::textInput('keyword', $keyword, ['class' => 'form-control form-search', 'placeholder' => Yii::t('DirectoryModule.base', 'Поиск')]); ?>
+                <?= Html::submitButton(Yii::t('DirectoryModule.base', '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 26 25" fill="none"> <path d="M11.2205 0C5.39751 0 0.660156 4.73736 0.660156 10.5604C0.660156 16.3834 5.39751 21.1207 11.2205 21.1207C17.0435 21.1207 21.7809 16.3834 21.7809 10.5604C21.7809 4.73736 17.0435 0 11.2205 0ZM11.2205 19.2734C6.41602 19.2734 2.50747 15.3649 2.50747 10.5604C2.50747 5.75586 6.41602 1.84732 11.2205 1.84732C16.0247 1.84732 19.9336 5.75586 19.9336 10.5604C19.9336 15.3649 16.025 19.2734 11.2205 19.2734Z" fill="white"/> <path d="M25.3901 23.4234L18.6782 16.7115C18.3174 16.3507 17.733 16.3507 17.3722 16.7115C17.0114 17.0721 17.0114 17.6571 17.3722 18.0176L24.0841 24.7294C24.2645 24.9098 24.5006 25 24.7371 25C24.9736 25 25.2097 24.9098 25.3901 24.7294C25.7509 24.3689 25.7509 23.7839 25.3901 23.4234Z" fill="white"/> </svg>'), ['class' => 'btn btn-default btn-sm form-button-search']); ?>
             </div>
-            <div class="col-md-3"></div>
-        </div>
         <?= Html::endForm(); ?>
 
         <?php if (count($spaces) == 0): ?>
@@ -40,7 +34,6 @@ use yii\helpers\Url;
         <?php endif; ?>
     </div>
 
-    <hr>
     <ul class="media-list">
         <?php foreach ($spaces as $space) : ?>
             <li>
@@ -50,31 +43,24 @@ use yii\helpers\Url;
                     </div>
 
                     <?= Image::widget([
-                        'space' => $space, 'width' => 50,
+                        'space' => $space,
+                        'width' => 48,
                         'htmlOptions' => [
                             'class' => 'media-object',
                             'data-contentcontainer-id' => $space->contentcontainer_id
                         ],
-                        'linkOptions' => ['class' => 'pull-left'],
+                        'linkOptions' => ['class' => 'media-avatar'],
                         'link' => true,
                     ]); ?>
-
-                    <?php if ($space->isMember()): ?>
-                        <i class="fa fa-user space-member-sign tt" data-toggle="tooltip" data-placement="top" title=""
-                           data-original-title="<?= Yii::t('DirectoryModule.base', 'You are a member of this space'); ?>"></i>
-                    <?php endif; ?>
 
                     <div class="media-body">
                         <h4 class="media-heading">
                             <?= Html::containerLink($space); ?>
-                            <?php if ($space->isArchived()) : ?>
-                                <span
-                                    class="label label-warning"><?= Yii::t('ContentModule.base', 'Archived'); ?></span>
-                            <?php endif; ?>
                         </h4>
+                    </div>
 
-                        <h5><?= Html::encode(Helpers::truncateText($space->description, 100)); ?></h5>
-                        <?= SpaceTagList::widget(['space' => $space]); ?>
+                    <div class="media-actions">
+                        <?= MembershipButton::widget(['space' => $space]); ?>
                     </div>
                 </div>
             </li>
