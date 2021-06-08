@@ -38,10 +38,6 @@ use yii\helpers\Url;
         <?php foreach ($spaces as $space) : ?>
             <li>
                 <div class="media">
-                    <div class="pull-right">
-                        <?= MembershipButton::widget(['space' => $space]); ?>
-                    </div>
-
                     <?= Image::widget([
                         'space' => $space,
                         'width' => 48,
