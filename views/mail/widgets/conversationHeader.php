@@ -34,7 +34,7 @@
 </div>
 
 <div class="conversation-head-info">
-    <?= Yii::t('MailModule.base', '{name}', ['name' => $link]) ?>
+    <?= Yii::t('MailModule.base', '{name}', ['name' => $message->title]) ?>
     <?= ParticipantUserList::widget(['message' => $message, 'options' => ['class' => '']]) ?>
 </div>
 
