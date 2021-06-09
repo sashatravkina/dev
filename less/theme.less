@@ -6283,7 +6283,7 @@ ul.tag_input li img {
             margin-top: unset;
 
             .conversation-entry-content {
-                background: #F4F4F4;
+                background-color: @action;
                 border-radius: unset;
         
                 @media @desktop {
@@ -6299,6 +6299,10 @@ ul.tag_input li img {
                     font-size: 14px;
                     line-height: 1.4;
                     color: #000;
+                }
+
+                &.conversation-entry-reply {
+                    background-color: #F4F4F4;
                 }
             }
             .conversation-menu {
