@@ -23,23 +23,15 @@ $isOwnMessage = $entry->user->is(Yii::$app->user->getIdentity());
 <div class="media">
 
     <?php if(!$isOwnMessage) : ?>
-    <span class="author-image pull-left">
-        <?= Image::widget(['user' => $entry->user, 'width' => 30]) ?>
-    </span>
+
     <?php endif; ?>
 
     <?php if(!$isOwnMessage) : ?>
-        <div class="media-body author-label">
-            <strong class="media-heading" style="font-size: 10px">
-                <?= Html::encode($entry->user->displayName)  ?>
-            </strong>
-        </div>
+
     <?php endif; ?>
 
-    <div class="<?= $contentClass ?>" style="<?= $isOwnMessage ? 'float:right' : ''?>">
-        <div style="display: table-cell">
-            <?= RichText::output($entry->content) ?>
-        </div>
+    <div class="<?= $contentClass ?> <?php if(!$isOwnMessage) : ?>conversation-entry-reply<?php endif; ?>" style="<?= $isOwnMessage ? 'float:right' : ''?>">
+        <?= RichText::output($entry->content) ?>
     </div>
 </div>
 
