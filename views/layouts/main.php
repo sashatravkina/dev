@@ -21,7 +21,7 @@
         <div class="hidden-from-desktop">
             <div class="nav-toggle menu-icon-open">
                 <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"> <rect x="2.23022" y="0.707107" width="52.3979" height="2.1527" rx="1.07635" transform="rotate(45.0205 2.23022 0.707107)" fill="#045269" stroke="#045269"/> <rect x="0.000253171" y="0.707107" width="52.3979" height="2.1527" rx="1.07635" transform="matrix(-0.706854 0.70736 0.70736 0.706854 37.2454 0.207107)" fill="#045269" stroke="#045269"/> </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="89" height="89" viewBox="0 0 89 89" fill="none"> <g opacity="0.8" filter="url(#filter0_d)"> <rect x="4" width="81" height="81" fill="#F4F4F4"/> </g> <g opacity="0.8"> <rect x="24.5693" y="22.9911" width="38.7443" height="2.86995" rx="1.43498" fill="#045269"/> </g> <g opacity="0.8"> <rect x="24.5693" y="37.3409" width="38.7443" height="2.86995" rx="1.43498" fill="#045269"/> </g> <g opacity="0.8"> <rect x="24.5693" y="53.1256" width="38.7443" height="2.86995" rx="1.43498" fill="#045269"/> </g> <defs> <filter id="filter0_d" x="0" y="0" width="89" height="89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feGaussianBlur stdDeviation="2"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> </defs> </svg>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="sidebar mobile-navigation">
             <div class="topbar" id="topbar-first">
                 <div class="hidden-from-desktop nav-toggle mobile-icon">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none"><rect x="2.11133" width="48.7919" height="2.88076" rx="1.44038" transform="rotate(45.0205 2.11133 0)" fill="#B2B1B1"/><rect width="48.7919" height="2.88076" rx="1.44038" transform="matrix(-0.706854 0.70736 0.70736 0.706854 34.5625 0)" fill="#B2B1B1"/></svg></div>
+                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"> <rect x="2.23022" y="0.707107" width="52.3979" height="2.1527" rx="1.07635" transform="rotate(45.0205 2.23022 0.707107)" fill="#045269" stroke="#045269"/> <rect x="0.000253171" y="0.707107" width="52.3979" height="2.1527" rx="1.07635" transform="matrix(-0.706854 0.70736 0.70736 0.706854 37.2454 0.207107)" fill="#045269" stroke="#045269"/> </svg></div>
                 </div>
                 <div class="container">
                     <div class="item">
