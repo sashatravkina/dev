@@ -900,11 +900,16 @@ ul.contextMenu li.selected {
 }
 
 .media-list li {
-    padding: 10px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-left: 12px;
+    padding-top: 8px;
+
     border-bottom: 1px solid #FFF3EF;
-    position: relative;
     border-left: 3px solid white;
-    font-size: 12px
+    font-size: 12px;
+
+    position: relative;
 }
 
 .media-list li a {
@@ -1158,6 +1163,12 @@ img {
     }
 }
 
+.panel.panel-activities {
+    .panel-heading {
+        padding: 16px;
+    }
+}
+
 .panel .panel-body {
     font-size: 16px;
     padding: 16px;
@@ -1195,10 +1206,10 @@ img {
 
 .panel .statistics .entry .count {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     line-height: .8em;
 
-    color: @info;
+    color: @blue;
 }
 .panel .statistics .entry .title {
     font-weight: 600;
@@ -1403,7 +1414,7 @@ img {
     }
 
     @media @mobile {
-        flex-direction: column;
+
     }
 
     width: 100%;
@@ -3234,7 +3245,12 @@ table td a:hover {
 }
 
 .wall-search {
-    margin-bottom: 12px;
+    @media @desktop {
+        margin-bottom: 12px;
+    }
+    @media @mobile {
+        margin-bottom: 6px;
+    }
 
     .search-menu {
         padding-top: 0;
@@ -6726,6 +6742,80 @@ ul.tag_input li img {
                 }
                 @media @desktop {
                     margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}
+
+/* Space Page */
+
+.section-space-page {
+    .space-content {
+        .layout-content-container {
+            .wallFilterPanel {
+                .wall-search {
+                    .search-menu {
+                        .form-group {
+                            margin-bottom: unset;
+                
+                            .form-search {
+                                position: relative;
+                
+                                @media @mobile {
+                                    background-color: #EFEFEF;
+                                    border: 2px solid #EFEFEF;
+                                }
+                                @media @desktop {
+                                    background-color: @white;
+                                    border: 2px solid @white;
+                                }
+                
+                                border-radius: 24px;
+                                
+                                padding-bottom: 20px;
+                                padding-right: 20px;
+                                padding-left: 48px;
+                                padding-top: 20px;
+                
+                                border-radius: 30px;
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M6.33621 0C2.84241 0 0 2.84241 0 6.33621C0 9.83001 2.84241 12.6724 6.33621 12.6724C9.83001 12.6724 12.6724 9.83001 12.6724 6.33621C12.6724 2.84241 9.82998 0 6.33621 0ZM6.33621 11.564C3.45352 11.564 1.10839 9.21891 1.10839 6.33621C1.10839 3.45352 3.45352 1.10839 6.33621 1.10839C9.21873 1.10839 11.564 3.45352 11.564 6.33621C11.564 9.21891 9.21891 11.564 6.33621 11.564Z' fill='%23B2B1B1'/%3E%3Cpath d='M14.8379 14.054L10.8108 10.0269C10.5943 9.81044 10.2436 9.81044 10.0271 10.0269C9.81062 10.2433 9.81062 10.5942 10.0271 10.8106L14.0542 14.8377C14.1625 14.9459 14.3042 15 14.4461 15C14.5879 15 14.7296 14.9459 14.8379 14.8377C15.0544 14.6213 15.0544 14.2704 14.8379 14.054Z' fill='%23B2B1B1'/%3E%3C/svg%3E");
+                                background-repeat: no-repeat;
+                                background-position: 16px 12px;
+                
+                                font-family: @fontFamily;
+                                font-weight: 400;
+                            }
+                            .form-button-search {
+                                @media @mobile {
+                                    background-color: #045269;
+                                }
+                                @media @desktop {
+                                    background-color: #DDDCDB;
+                                }
+                
+                                padding-right: 24px;
+                                padding-left: 24px;
+                
+                                bottom: 0;
+                                right: 0;
+                                top: 0;
+                
+                                justify-content: center;
+                                align-items: center;
+                                display: flex;
+                
+                                &:hover {
+                                    @media @mobile {
+                                        background-color: #065f7a;
+                                    }
+                                    @media @desktop {
+                                        background-color: #cacaca;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
