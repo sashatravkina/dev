@@ -9,7 +9,10 @@ use humhub\widgets\FooterMenu;
 
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-2">
+            <?= Menu::widget(); ?>
+        </div>
+        <div class="col-md-7">
             <?= $content; ?>
         </div>
         <div class="col-md-3">
