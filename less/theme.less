@@ -6254,7 +6254,8 @@ ul.tag_input li img {
 
 #mail-conversation-overview {
     @media @desktop {
-        height: calc(100vh - 35px);
+        height: calc(100vh - 26px - 26px);
+        margin-bottom: unset;
 
         overflow-x: hidden;
         overflow-y: scroll;
@@ -6346,6 +6347,13 @@ ul.tag_input li img {
     }
 }
 #mail-conversation-root {
+    .panel {
+        @media @desktop {
+            height: calc(100vh - 26px - 26px);
+            margin-bottom: unset;
+        }
+    }
+
     #mail-conversation-header {
         padding-bottom: 16px;
         padding-right: 16px;
