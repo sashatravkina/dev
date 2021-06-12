@@ -1473,8 +1473,6 @@ img {
                             margin-bottom: 8px;
                             padding-bottom: 2px;
 
-                            display: flex;
-
                             @media @mobile {
                                 border-bottom: 2px solid #F2F2F2;;
                             }
@@ -1485,31 +1483,37 @@ img {
 
                             .control-label {
                                 font-weight: 500;
+                                float: left;
 
                                 @media @mobile {
+                                    margin-right: 8px;
                                     color: @lightGray;
                                 }
                                 @media @desktop {
                                     color: @action;
+                                    width: 20%;
+
+                                    margin-right: 16px;
                                 }
 
                                 padding-top: unset;
 
                                 margin-bottom: 0;
-                                margin-right: 8px;
-                                width: 20%;
                             }
                             .form-control-static {
                                 font-weight: 500;
                                 color: @gray;
+
+                                float: left;
 
                                 padding-bottom: unset;
                                 padding-top: unset;
 
                                 min-height: unset;
 
-                                margin-left: 8px;
-                                width: 70%;
+                                @media @desktop {
+                                    width: 70%;
+                                }
                             }
                         }
                     }
