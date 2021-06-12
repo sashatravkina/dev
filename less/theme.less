@@ -6255,6 +6255,16 @@ ul.tag_input li img {
 #mail-conversation-overview {
     @media @desktop {
         height: calc(100vh - 35px);
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
     
     #inbox {
