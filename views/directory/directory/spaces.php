@@ -17,7 +17,7 @@ use yii\helpers\Url;
 ?>
 <div class="panel panel-default section-spaces">
 
-    <div class="panel-heading">
+    <div class="panel-heading hidden-xs">
         <?= Yii::t('DirectoryModule.base', '<strong>Список</strong> групп'); ?>
     </div>
 

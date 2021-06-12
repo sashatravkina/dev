@@ -15,7 +15,7 @@ use humhub\modules\user\widgets\Image;
 ?>
 <div class="panel panel-default section-members">
 
-    <div class="panel-heading">
+    <div class="panel-heading hidden-xs">
         <?php if ($group === null) : ?>
             <?= Yii::t('DirectoryModule.base', '<strong>Member</strong> directory'); ?>
         <?php else: ?>

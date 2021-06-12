@@ -27,8 +27,7 @@ $rightPanelBlocks = isset($panels[WallStreamFilterNavigation::PANEL_POSITION_RIG
         <!--
         <div class="wall-stream-filter-head clearfix">
             <div class="wall-stream-filter-bar"></div>
-            <?= Button::asLink(Yii::t('ContentModule.base', 'Filter') . '<b class="caret"></b>')
-                ->cssClass('wall-stream-filter-toggle')->icon('fa-filter')->sm()->style('pa') ?>
+            <?= Button::asLink(Yii::t('ContentModule.base', 'Filter') . '<b class="caret"></b>')->cssClass('wall-stream-filter-toggle')->icon('fa-filter')->sm()->style('pa') ?>
         </div>
         -->
         <div class="wall-search clearfix">

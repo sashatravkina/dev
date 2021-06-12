@@ -16,7 +16,7 @@ use humhub\modules\space\widgets\MembershipButton;
     <div class="panel-profile-controls">
         <?= HeaderCounterSet::widget(['space' => $container]); ?>
 
-        <div class="controls controls-header pull-right">
+        <div class="controls controls-header">
             <?= HeaderControls::widget(['widgets' => [
                 [InviteButton::class, ['space' => $container], ['sortOrder' => 10]],
                 [MembershipButton::class, ['space' => $container], ['sortOrder' => 20]]
