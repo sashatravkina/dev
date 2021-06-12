@@ -6852,7 +6852,7 @@ ul.tag_input li img {
 .section-space-page {
     .panel-profile {
         .panel-body {
-            .panel-profile-controls {
+            .panel-profile-controls {                
                 .controls-header {
                     .btn {
                         i {
@@ -6956,6 +6956,10 @@ ul.tag_input li img {
     .panel-profile {
         .panel-body {
             .panel-profile-controls {
+                @media @mobile {
+                    margin-top: 3rem;
+                }
+
                 .statistics {
                     @media @mobile {
                         display: none;
@@ -6964,6 +6968,13 @@ ul.tag_input li img {
                 .controls-header {
                     @media @mobile {
                         margin-left: auto;
+                        text-align: right !important;
+                        margin-bottom: -0.5rem;
+                    }
+                    .btn {
+                        @media @mobile {
+                            margin-bottom: 0.5rem;
+                        }
                     }
                 }
             }
