@@ -5113,6 +5113,16 @@ img.bounceIn {
     color: @info
 }
 
+@media @mobile {
+    #layout-content .panel-profile-header #profilefileupload,
+    #layout-content .panel-profile-header .profile-user-photo-container,
+    #layout-content .panel-profile-header .space-acronym,
+    #layout-content .panel-profile-header .profile-user-photo {
+        height: 80px !important;
+        width: 80px !important
+    }
+}
+
 @media screen and (max-width:768px) {
     .ProsemirrorEditor.focusMenu .ProseMirror-menubar {
         min-height: 1em
@@ -5174,13 +5184,6 @@ img.bounceIn {
     }
     #layout-content .layout-nav-container .panel-heading {
         display: none
-    }
-    #layout-content .panel-profile-header #profilefileupload,
-    #layout-content .panel-profile-header .profile-user-photo-container,
-    #layout-content .panel-profile-header .space-acronym,
-    #layout-content .panel-profile-header .profile-user-photo {
-        height: 80px !important;
-        width: 80px !important
     }
     .panel-profile .panel-profile-header .profile-user-photo-container .profile-user-photo {
         border-width: 4px;
@@ -6409,6 +6412,8 @@ ul.tag_input li img {
                 line-height: 1.4;
                 color: @black;
 
+                display: block;
+                
                 a {
                     color: @black !important;
 
