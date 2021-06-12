@@ -12,7 +12,7 @@ use humhub\modules\user\widgets\UserFollowButton;
     <div class="panel-profile-controls">
         <?= ProfileHeaderCounterSet::widget(['user' => $container]); ?>
 
-        <div class="controls controls-header pull-right">
+        <div class="controls controls-header">
             <?= ProfileHeaderControls::widget([
                 'user' => $container,
                 'widgets' => [

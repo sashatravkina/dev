@@ -49,7 +49,6 @@
         <!-- show user name and title -->
         <div class="img-profile-data">
             <h1 class="<?= $classPrefix ?>"><?= Html::encode($title) ?></h1>
-            <h2 class="<?= $classPrefix ?>"><?= Html::encode($subTitle) ?></h2>
         </div>
 
         <?php if ($canEdit) : ?>

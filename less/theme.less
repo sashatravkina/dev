@@ -778,6 +778,28 @@ input, textarea {
         left: unset;
         right: 0;
     }
+
+    li {
+        a {
+            .item {
+                align-items: center;
+                display: flex;
+
+                .icon {
+                    min-width: 16px;
+                    margin-right: 8px;
+
+                    justify-content: end;
+                    align-items: center;
+                    display: flex;
+
+                    svg {
+                        width: 16px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .dropdown-menu li a {
@@ -1150,11 +1172,11 @@ img {
                 }
 
                 .icon {
-                    min-width: 32px;
+                    min-width: 24px;
 
                     margin-right: 8px;
 
-                    justify-content: center;
+                    justify-content: end;
                     align-items: center;
                     display: flex; 
                 }
@@ -1303,9 +1325,6 @@ img {
 }
 
 .panel-profile .panel-profile-header .img-profile-data {
-    position: absolute;
-    bottom: 24px;
-
     padding-left: 0;
     padding-top: 0;
 
@@ -1313,11 +1332,14 @@ img {
     pointer-events: none;
 
     @media @desktop {
+        position: absolute;
+        bottom: 24px;
         left: 180px;
     }
     @media @mobile {
-        left: 110px;
+        position: relative;
         bottom: 20px;
+        left: 110px;
     }
 }
 
@@ -1360,10 +1382,7 @@ img {
 .panel-profile .panel-profile-header .img-profile-data h2.space {
     font-size: 16px;
     font-weight: 300;
-    max-width: 600px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
+    margin-top: 6px;
 }
 
 .panel-profile .panel-profile-header .profile-user-photo-container {
@@ -1452,9 +1471,12 @@ img {
                     .tab-pane {
                         .form-group {
                             margin-bottom: 8px;
+                            padding-bottom: 2px;
 
-                            @media @desktop {
-                                display: flex;
+                            display: flex;
+
+                            @media @mobile {
+                                border-bottom: 2px solid #F2F2F2;;
                             }
 
                             &:last-child {
@@ -1463,14 +1485,19 @@ img {
 
                             .control-label {
                                 font-weight: 500;
-                                color: @action;
+
+                                @media @mobile {
+                                    color: @lightGray;
+                                }
+                                @media @desktop {
+                                    color: @action;
+                                }
 
                                 padding-top: unset;
 
-                                @media @desktop {
-                                    margin-right: 8px;
-                                    width: 20%;
-                                }
+                                margin-bottom: 0;
+                                margin-right: 8px;
+                                width: 20%;
                             }
                             .form-control-static {
                                 font-weight: 500;
@@ -1481,10 +1508,8 @@ img {
 
                                 min-height: unset;
 
-                                @media @desktop {
-                                    margin-left: 8px;
-                                    width: 70%;
-                                }
+                                margin-left: 8px;
+                                width: 70%;
                             }
                         }
                     }
@@ -1504,9 +1529,9 @@ img {
             }
             .img-profile-data {
                 @media @mobile {
-                    bottom: 20px;
-                    right: 24px;
-                    left: 24px;
+                    bottom: 16px;
+                    right: 16px;
+                    left: 16px;
                 }
             }
         }
@@ -2554,6 +2579,10 @@ a.label-warning:hover {
 .panel-profile .panel-profile-header .img-profile-header-background {
     width: 100%;
     max-height: 180px;
+}
+
+.panel-profile .panel-profile-header .profile-banner-image-container {
+    background-color: @info;
 }
 
 @media print {
@@ -5161,9 +5190,6 @@ img.bounceIn {
         min-height: 80px !important;
         font-size: 20px !important;
     }
-    .panel-profile .panel-profile-header .img-profile-data h2 {
-        display: none;
-    }
     .modal-dialog {
         width: calc(100vw - 4px) !important;
         padding: 0 !important;
@@ -6233,6 +6259,7 @@ ul.tag_input li img {
     
     #inbox {
         border-radius: unset;
+        max-height: unset;
     }
 
     .panel-heading {
@@ -6318,6 +6345,11 @@ ul.tag_input li img {
         align-items: center;
         display: flex;
 
+        @media @desktop {
+            -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+        }
+
         #conversationSettingsButton {
             background: transparent !important;
             color: #C4C4C4 !important;
@@ -6328,7 +6360,12 @@ ul.tag_input li img {
         }
 
         .conversation-head-avatar {
-            margin-right: 8px;
+            @media @desktop {
+                margin-left: 8px;
+            }
+            @media @mobile {
+                margin-right: 8px;
+            }
 
             span {
                 &:first-child {
@@ -6338,6 +6375,10 @@ ul.tag_input li img {
         }
         .conversation-head-info {
             max-width: 70%;
+
+            @media @desktop {
+                margin-right: auto;
+            }
 
             span {
                 font-weight: 600;
@@ -6355,7 +6396,13 @@ ul.tag_input li img {
             }
         }
         .conversation-head-dropdown {
-            margin-left: auto;
+            @media @mobile {
+                margin-left: auto;
+            }
+            @media @desktop {
+                -ms-flex-order: -1;
+                order: -1;
+            }
         }
     }
     .conversation-entry-list {
@@ -6366,9 +6413,32 @@ ul.tag_input li img {
             margin-bottom: 12px;
             margin-top: unset;
 
+            .author-image {
+                span {
+                    display: block;
+
+                    a {
+                        display: block;
+
+                        img {
+                            margin-top: 27px;
+                        }
+                    }
+                }
+            }
+
+            .media-content {
+                display: flex;
+                flex-direction: column;
+            }
+
             .conversation-entry-content {
                 background-color: @action;
                 border-radius: unset;
+
+                overflow: unset;
+                width: fit-content;
+                float: unset !important;
         
                 @media @desktop {
                     padding: 20px 25px;
@@ -6376,6 +6446,10 @@ ul.tag_input li img {
                 @media @mobile {
                     padding: 12px 16px;
                     max-width: unset;
+                }
+
+                &.own {
+                    margin-left: auto;
                 }
         
                 p {
@@ -6388,12 +6462,18 @@ ul.tag_input li img {
                 &.conversation-entry-reply {
                     background-color: #F4F4F4;
                 }
+
+                [data-ui-markdown], [data-ui-richtext] {
+                    overflow: unset;
+                }
             }
             .conversation-menu {
                 display: block !important;
     
                 .conversation-menu-item {
                     margin-bottom: unset;
+                    margin-right: unset;
+                    margin-left: unset;
     
                     .time {
                         color: #B2B1B1;
@@ -6752,6 +6832,96 @@ ul.tag_input li img {
 
 .section-space-page {
     .space-content {
+        .layout-content-container {
+            .wallFilterPanel {
+                .wall-search {
+                    .search-menu {
+                        .form-group {
+                            margin-bottom: unset;
+                
+                            .form-search {
+                                position: relative;
+                
+                                @media @mobile {
+                                    background-color: #EFEFEF;
+                                    border: 2px solid #EFEFEF;
+                                }
+                                @media @desktop {
+                                    background-color: @white;
+                                    border: 2px solid @white;
+                                }
+                
+                                border-radius: 24px;
+                                
+                                padding-bottom: 20px;
+                                padding-right: 20px;
+                                padding-left: 48px;
+                                padding-top: 20px;
+                
+                                border-radius: 30px;
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M6.33621 0C2.84241 0 0 2.84241 0 6.33621C0 9.83001 2.84241 12.6724 6.33621 12.6724C9.83001 12.6724 12.6724 9.83001 12.6724 6.33621C12.6724 2.84241 9.82998 0 6.33621 0ZM6.33621 11.564C3.45352 11.564 1.10839 9.21891 1.10839 6.33621C1.10839 3.45352 3.45352 1.10839 6.33621 1.10839C9.21873 1.10839 11.564 3.45352 11.564 6.33621C11.564 9.21891 9.21891 11.564 6.33621 11.564Z' fill='%23B2B1B1'/%3E%3Cpath d='M14.8379 14.054L10.8108 10.0269C10.5943 9.81044 10.2436 9.81044 10.0271 10.0269C9.81062 10.2433 9.81062 10.5942 10.0271 10.8106L14.0542 14.8377C14.1625 14.9459 14.3042 15 14.4461 15C14.5879 15 14.7296 14.9459 14.8379 14.8377C15.0544 14.6213 15.0544 14.2704 14.8379 14.054Z' fill='%23B2B1B1'/%3E%3C/svg%3E");
+                                background-repeat: no-repeat;
+                                background-position: 16px 12px;
+                
+                                font-family: @fontFamily;
+                                font-weight: 400;
+                            }
+                            .form-button-search {
+                                @media @mobile {
+                                    background-color: #045269;
+                                }
+                                @media @desktop {
+                                    background-color: #DDDCDB;
+                                }
+                
+                                padding-right: 24px;
+                                padding-left: 24px;
+                
+                                bottom: 0;
+                                right: 0;
+                                top: 0;
+                
+                                justify-content: center;
+                                align-items: center;
+                                display: flex;
+                
+                                &:hover {
+                                    @media @mobile {
+                                        background-color: #065f7a;
+                                    }
+                                    @media @desktop {
+                                        background-color: #cacaca;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Profile Page */
+
+.section-profile-page {
+    .panel-profile {
+        .panel-body {
+            .panel-profile-controls {
+                .statistics {
+                    @media @mobile {
+                        display: none;
+                    }
+                }
+                .controls-header {
+                    @media @mobile {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+    .profile-content {
         .layout-content-container {
             .wallFilterPanel {
                 .wall-search {
