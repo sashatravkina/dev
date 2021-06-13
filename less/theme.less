@@ -1473,8 +1473,6 @@ img {
                             margin-bottom: 8px;
                             padding-bottom: 2px;
 
-                            display: flex;
-
                             @media @mobile {
                                 border-bottom: 2px solid #F2F2F2;;
                             }
@@ -1485,31 +1483,37 @@ img {
 
                             .control-label {
                                 font-weight: 500;
+                                float: left;
 
                                 @media @mobile {
+                                    margin-right: 8px;
                                     color: @lightGray;
                                 }
                                 @media @desktop {
                                     color: @action;
+                                    width: 20%;
+
+                                    margin-right: 16px;
                                 }
 
                                 padding-top: unset;
 
                                 margin-bottom: 0;
-                                margin-right: 8px;
-                                width: 20%;
                             }
                             .form-control-static {
                                 font-weight: 500;
                                 color: @gray;
+
+                                float: left;
 
                                 padding-bottom: unset;
                                 padding-top: unset;
 
                                 min-height: unset;
 
-                                margin-left: 8px;
-                                width: 70%;
+                                @media @desktop {
+                                    width: 70%;
+                                }
                             }
                         }
                     }
@@ -3214,7 +3218,8 @@ table td a:hover {
 }
 
 .wall-entry .content img {
-    max-width: 100%
+    max-height: 920px;
+    max-width: 100%;
 }
 .wall-entry .content .showMore {
     font-weight: 500;
@@ -5108,6 +5113,16 @@ img.bounceIn {
     color: @info
 }
 
+@media @mobile {
+    #layout-content .panel-profile-header #profilefileupload,
+    #layout-content .panel-profile-header .profile-user-photo-container,
+    #layout-content .panel-profile-header .space-acronym,
+    #layout-content .panel-profile-header .profile-user-photo {
+        height: 80px !important;
+        width: 80px !important
+    }
+}
+
 @media screen and (max-width:768px) {
     .ProsemirrorEditor.focusMenu .ProseMirror-menubar {
         min-height: 1em
@@ -5169,13 +5184,6 @@ img.bounceIn {
     }
     #layout-content .layout-nav-container .panel-heading {
         display: none
-    }
-    #layout-content .panel-profile-header #profilefileupload,
-    #layout-content .panel-profile-header .profile-user-photo-container,
-    #layout-content .panel-profile-header .space-acronym,
-    #layout-content .panel-profile-header .profile-user-photo {
-        height: 80px !important;
-        width: 80px !important
     }
     .panel-profile .panel-profile-header .profile-user-photo-container .profile-user-photo {
         border-width: 4px;
@@ -6404,6 +6412,8 @@ ul.tag_input li img {
                 line-height: 1.4;
                 color: @black;
 
+                display: block;
+                
                 a {
                     color: @black !important;
 
@@ -6851,7 +6861,7 @@ ul.tag_input li img {
 .section-space-page {
     .panel-profile {
         .panel-body {
-            .panel-profile-controls {
+            .panel-profile-controls {                
                 .controls-header {
                     .btn {
                         i {
@@ -6955,6 +6965,10 @@ ul.tag_input li img {
     .panel-profile {
         .panel-body {
             .panel-profile-controls {
+                @media @mobile {
+                    margin-top: 3rem;
+                }
+
                 .statistics {
                     @media @mobile {
                         display: none;
@@ -6963,6 +6977,13 @@ ul.tag_input li img {
                 .controls-header {
                     @media @mobile {
                         margin-left: auto;
+                        text-align: right !important;
+                        margin-bottom: -0.5rem;
+                    }
+                    .btn {
+                        @media @mobile {
+                            margin-bottom: 0.5rem;
+                        }
                     }
                 }
             }
