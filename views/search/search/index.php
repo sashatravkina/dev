@@ -65,7 +65,7 @@ humhub\modules\stream\assets\StreamAsset::register($this);
                 <div class="panel-heading"><strong><?= Yii::t('base', 'Search'); ?></strong></div>
                 <div class="panel-body panel-search-form">
                     <?php $form = ActiveForm::begin(['action' => Url::to(['index']), 'method' => 'GET']); ?>
-                    <div class="form-group form-group-search">
+                    <div class="form-group form-group-search form-group-search-page">
                         <?= $form->field($model, 'keyword')->textInput([
                             'placeholder' => Yii::t('SearchModule.base', 'Search for user, spaces and content'),
                             'title' => Yii::t('SearchModule.base', 'Search for user, spaces and content'),
@@ -86,6 +86,7 @@ humhub\modules\stream\assets\StreamAsset::register($this);
                             <i class="fa fa-caret-right"></i> <?= Yii::t('SearchModule.base', 'Advanced search settings') ?>
                         </a>
                     </div>
+                    -->
                     <div id="collapse-search-settings" class="panel-collapse collapse">
                         <br>
                         <?=  Yii::t('SearchModule.base', 'Search only in certain spaces:') ?>
@@ -97,8 +98,6 @@ humhub\modules\stream\assets\StreamAsset::register($this);
                             'placeholder' => Yii::t('SearchModule.base', 'Specify space')
                         ]) ?>
                     </div>
-                    ->
-                    <br>
                     <?php ActiveForm::end(); ?>
                 </div>
             </div>
