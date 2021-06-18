@@ -6696,7 +6696,6 @@ label.checksearch .caret {
 }
 .wall-entry-body {
     .wall-entry-footer {
-
         .stream-entry-addons {
             & > .well-small {
                 @media @desktop {
@@ -6716,6 +6715,18 @@ label.checksearch .caret {
                 }
 
                 display: block !important;
+
+                .comment-create {
+                    align-items: center;
+                    display: flex;
+
+                    .comment-create-image {
+                        margin-right: 8px;
+                    }
+                    .comment-create-body {
+                        width: calc(100% - 48px);
+                    }
+                }
 
                 .wall-entry-controls {
                     svg {
@@ -6739,26 +6750,60 @@ label.checksearch .caret {
                     margin-top: 16px;
                 }
 
-                span {
-                    justify-content: center;
-                    display: flex;
-                }
-                a {
-                    align-items: center;
-                    display: flex;
-
-                    color: @lightGray;
-
-                    span {
-                        margin-left: 4px;
-                    }
-                }
+                justify-content: space-between;
+                -ms-flex-pack: justify;
+                align-items: center;
+                display: flex;
 
                 .control-item {
-                    margin-right: 16px;
+                    width: 33.3333333%;
+
+                    justify-content: center;
+                    display: flex;
+
+                    &:first-child {
+                        justify-content: end;
+                    }
 
                     &:last-child {
+                        justify-content: flex-end;
                         margin-right: unset;
+                    }
+
+                    &.control-item-like {
+                        justify-content: end;
+                        order: 1;
+                    }
+                    &.control-item-comment {
+                        justify-content: center;
+                        order: 2;
+                    }
+                    &.control-item-share {
+                        justify-content: flex-end;
+                        order: 3;
+                    }
+
+                    a {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: @blue;
+
+                        margin-bottom: 0;
+
+                        align-items: center;
+                        display: flex;
+
+                        span {
+                            margin-left: 4px;
+                        }
+                    }
+
+                    & > a {
+                        & > span.title {
+                            @media @mobile-min {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -6824,8 +6869,6 @@ label.checksearch .caret {
 
                                 padding-right: 14px;
                                 padding-left: 14px;
-
-                                margin-left: 36px;
                             }
 
                             p {
@@ -6866,15 +6909,13 @@ label.checksearch .caret {
                             .comment-container {
                                 box-shadow: unset;
 
-                                .comment_create {
-                                    .comment-create-input-group {
-                                        margin-left: 36px;
-                                    }
+                                .comment-create {
+                                    margin-left: 48px;
                                 }
 
                                 .comment {
                                     .media {
-                                        margin-left: 36px;
+                                        margin-left: 49px;
 
                                         &:last-child {
                                             margin-bottom: unset;
@@ -6887,45 +6928,76 @@ label.checksearch .caret {
                             display: none;
                         }
                     }
-                    .wall-entry-controls {
-                        font-size: 12px;
-                        font-weight: 500;
-
-                        color: @lightGray;
-
-                        margin-bottom: 0;
-                        margin-left: 36px;
-
-                        @media @desktop {
-                            padding-top: 8px;
-                        }
-
-                        align-items: center;
+                    .comment-frame {
                         display: flex;
 
-                        span {
-                            justify-content: center;
-                            display: flex;
-                        }
-                        a {
-                            align-items: center;
-                            display: flex;
-                        }
-                        a span {
-                            margin-left: 4px;
-                        }
-                        a {
-                            font-size: 12px;
-                            font-weight: 500;
-                            color: @lightGray;
-                            margin-bottom: 0;
-                        }
-
-                        .control-item {
+                        .comment-frame-image {
                             margin-right: 8px;
 
-                            &:last-child {
-                                margin-right: unset;
+                            span {
+                                display: block;
+                                
+                                a {
+                                    display: block;
+                                }
+                            }
+                        }
+                        .comment-frame-body {
+                            .wall-entry-controls {
+                                font-size: 12px;
+                                font-weight: 500;
+
+                                color: @blue;
+
+                                margin-bottom: 0;
+
+                                @media @desktop {
+                                    padding-top: 8px;
+                                }
+
+                                justify-content: space-between;
+                                -ms-flex-pack: justify;
+                                align-items: center;
+                                display: flex;
+
+                                .control-item {
+                                    width: 33.3333333%;
+
+                                    justify-content: center;
+                                    display: flex;
+
+                                    &:first-child {
+                                        justify-content: end;
+                                    }
+
+                                    &:last-child {
+                                        justify-content: flex-end;
+                                        margin-right: unset;
+                                    }
+
+                                    a {
+                                        font-size: 12px;
+                                        font-weight: 500;
+                                        color: @blue;
+
+                                        margin-bottom: 0;
+
+                                        align-items: center;
+                                        display: flex;
+
+                                        span {
+                                            margin-left: 4px;
+                                        }
+                                    }
+
+                                    & > a {
+                                        & > span.title {
+                                            @media @mobile-min {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

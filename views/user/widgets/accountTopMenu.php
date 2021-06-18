@@ -39,11 +39,11 @@ $userModel = Yii::$app->user->identity;
                 <?php endif; ?>
 
                 <?= Image::widget([
-                        'user' => $userModel,
-                        'link'  => false,
-                        'width' => 60,
-                        'htmlOptions' => [
-                                'id' => 'user-account-image',
+                    'user' => $userModel,
+                    'link'  => false,
+                    'width' => 60,
+                    'htmlOptions' => [
+                    'id' => 'user-account-image',
                  ]])?>
 
                 <b class="caret"></b>
