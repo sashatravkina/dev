@@ -2056,7 +2056,7 @@ a.label-warning:hover {
     padding: 3px 5px;
     border-radius: 2px;
     font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 10px !important;
     text-transform: uppercase;
     color: @white;
@@ -3815,7 +3815,7 @@ blockquote {
 
 .wmd-prompt-dialog>div {
     font-size: .8em;
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Lato', sans-serif
 }
 
 .wmd-prompt-dialog>form>input[type="text"] {
@@ -3825,7 +3825,7 @@ blockquote {
 
 .wmd-prompt-dialog>form>input[type="button"] {
     border: 1px solid #888888;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: .8em;
     font-weight: bold
 }
@@ -4861,7 +4861,7 @@ img.bounceIn {
     border: 2px solid @default;
     border-radius: unset;
     color: @font3;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     outline: 0
 }
@@ -4871,7 +4871,7 @@ img.bounceIn {
     border: 2px solid @default;
     border-radius: unset;
     color: @font3;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px
 }
 
@@ -6699,18 +6699,14 @@ label.checksearch .caret {
         .stream-entry-addons {
             & > .well-small {
                 @media @desktop {
-                    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-                    background-color: @subBackground;
-
-                    padding-right: 16px;
-                    padding-left: 16px;
+                    border-top: 1px solid #F2F2F2;
 
                     margin-top: 16px;
                 }
                 @media @mobile {
-                    padding-top: 6px;
-
                     border-top: 2px solid #F2F2F2;
+
+                    padding-top: 6px;
                     margin-top: 12px;
                 }
 
@@ -6747,6 +6743,7 @@ label.checksearch .caret {
                     margin-top: 12px;
                 }
                 @media @desktop {
+                    max-width: 50rem;
                     margin-top: 16px;
                 }
 
@@ -6760,6 +6757,8 @@ label.checksearch .caret {
 
                     justify-content: center;
                     display: flex;
+
+                    position: relative;
 
                     &:first-child {
                         justify-content: end;
@@ -6783,25 +6782,57 @@ label.checksearch .caret {
                         order: 3;
                     }
 
-                    a {
-                        font-size: 12px;
-                        font-weight: 500;
-                        color: @blue;
-
-                        margin-bottom: 0;
-
+                    .control-item-frame {
                         align-items: center;
                         display: flex;
 
-                        span {
-                            margin-left: 4px;
+                        position: relative;
+                        z-index: 0;
+
+                        &::before {
+                            background-color: transparent;
+                            border-radius: 24px;
+    
+                            content: '';
+    
+                            position: absolute;
+                            z-index: -10;
+                            bottom: -4px;
+                            right: -8px;
+                            left: -8px;
+                            top: -4px;
+                        }
+    
+                        &:hover {
+                            &::before {
+                                background-color: #F4F4F4;
+                            }
+                        }
+
+                        a {
+                            font-size: 12px;
+                            font-weight: 500;
+                            color: @blue;
+    
+                            margin-bottom: 0;
+    
+                            align-items: center;
+                            display: flex;
+    
+                            position: relative;
+    
+                            span {
+                                margin-left: 4px;
+                            }
                         }
                     }
 
-                    & > a {
-                        & > span.title {
-                            @media @mobile-min {
-                                display: none;
+                    & > .control-item-frame {
+                        & > a {
+                            & > span.title {
+                                @media @mobile-min {
+                                    display: none !important;
+                                }
                             }
                         }
                     }
@@ -6943,6 +6974,26 @@ label.checksearch .caret {
                             }
                         }
                         .comment-frame-body {
+                            .media-body {
+                                @media @desktop {
+                                    background-color: @subBackground;
+
+                                    padding-right: 8px;
+                                    padding-left: 8px;
+                                    padding-top: 8px;
+                                }
+                            }
+                            .content {
+                                @media @desktop {
+                                    background-color: @subBackground;
+
+                                    padding-bottom: 8px;
+                                    padding-right: 8px;
+                                    padding-left: 8px;
+                                    padding-top: 8px;
+                                    margin-top: -8px;
+                                }
+                            }
                             .wall-entry-controls {
                                 font-size: 12px;
                                 font-weight: 500;
@@ -6952,7 +7003,14 @@ label.checksearch .caret {
                                 margin-bottom: 0;
 
                                 @media @desktop {
+                                    padding-bottom: 8px;
+                                    padding-right: 8px;
+                                    padding-left: 8px;
                                     padding-top: 8px;
+
+                                    margin-bottom: -8px;
+
+                                    width: 25rem;
                                 }
 
                                 justify-content: space-between;
@@ -6961,8 +7019,6 @@ label.checksearch .caret {
                                 display: flex;
 
                                 .control-item {
-                                    width: 33.3333333%;
-
                                     justify-content: center;
                                     display: flex;
 
@@ -6975,25 +7031,59 @@ label.checksearch .caret {
                                         margin-right: unset;
                                     }
 
-                                    a {
-                                        font-size: 12px;
-                                        font-weight: 500;
-                                        color: @blue;
+                                    &.control-item-share {
+                                        display: none !important;
+                                    }
 
-                                        margin-bottom: 0;
-
+                                    .control-item-frame {
                                         align-items: center;
                                         display: flex;
+                
+                                        position: relative;
+                                        z-index: 0;
+                
+                                        &::before {
+                                            background-color: transparent;
+                                            border-radius: 24px;
+                    
+                                            content: '';
+                    
+                                            position: absolute;
+                                            z-index: -10;
+                                            bottom: -4px;
+                                            right: -8px;
+                                            left: -8px;
+                                            top: -4px;
+                                        }
+                    
+                                        &:hover {
+                                            &::before {
+                                                background-color: #F4F4F4;
+                                            }
+                                        }
 
-                                        span {
-                                            margin-left: 4px;
+                                        a {
+                                            font-size: 12px;
+                                            font-weight: 500;
+                                            color: @blue;
+    
+                                            margin-bottom: 0;
+    
+                                            align-items: center;
+                                            display: flex;
+    
+                                            span {
+                                                margin-left: 4px;
+                                            }
                                         }
                                     }
 
-                                    & > a {
-                                        & > span.title {
-                                            @media @mobile-min {
-                                                display: none;
+                                    & > .control-item-frame {
+                                        & > a {
+                                            & > span.title {
+                                                @media @mobile-min {
+                                                    display: none !important;
+                                                }
                                             }
                                         }
                                     }
@@ -7023,7 +7113,6 @@ label.checksearch .caret {
                 }
                 .comment_create {
                     @media @desktop {
-                        padding-bottom: 16px;
                         padding-top: 16px;
                     }
                     @media @mobile {
