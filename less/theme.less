@@ -4282,22 +4282,12 @@ img.bounceIn {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     overflow: visible;
-    background: @white;
+    background-color: @white;
     border-radius: 0;
     float: left;
 
-    @media @desktop {
-        margin-top: -28px;
-    }
-    @media @mobile {
-        margin-top: -36px;
-    }
-}
-
-@-moz-document url-prefix() {
-    .ProsemirrorEditor.focusMenu .ProseMirror-menubar {
-        margin-top: -27px
-    }
+    transform: translateY(-100%);
+    position: absolute;
 }
 
 .ProsemirrorEditor .ProseMirror {
@@ -5788,7 +5778,7 @@ ul.tag_input li img {
 }
 
 .menu-icon-open {
-    position: absolute;
+    position: fixed;
     z-index: 100;
 
     left: 6px;
@@ -5901,6 +5891,12 @@ ul.tag_input li img {
     }
 }
 #mail-conversation-root {
+    .panel-body {
+        padding-bottom: unset;
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: unset;
+    }
     .panel {
         @media @desktop {
             height: calc(100vh - 26px - 26px);
@@ -5940,8 +5936,14 @@ ul.tag_input li img {
             }
 
             span {
-                &:first-child {
-                    display: none;
+                display: inline-block;
+
+                margin-right: 8px;
+
+                &:first-of-type {
+                    @media @mobile {
+                        display: none !important;
+                    }
                 }
             }
         }
@@ -5980,14 +5982,19 @@ ul.tag_input li img {
         }
     }
     .conversation-entry-list {
+        margin-bottom: 60px !important;
+
         .media {
             padding-right: unset;
         }
         .mail-conversation-entry {
-            margin-bottom: 12px;
-            margin-top: unset;
+            margin-bottom: 16px;
+            margin-top: 16px;
 
             .author-image {
+                img {
+                    margin-top: 0;
+                }
                 span {
                     display: block;
 
@@ -5995,7 +6002,7 @@ ul.tag_input li img {
                         display: block;
 
                         img {
-                            margin-top: 27px;
+                            margin-top: 0;
                         }
                     }
                 }
@@ -6068,10 +6075,12 @@ ul.tag_input li img {
         }
     }
     .mail-message-form {
+        background-color: #ffffff;
+
         padding-bottom: 16px;
         padding-right: 16px;
         padding-left: 16px;
-        padding-top: 16px;
+        padding-top: unset;
 
         .humhub-ui-richtext {
             border-radius: unset;
@@ -7032,7 +7041,9 @@ label.checksearch .caret {
                                     }
 
                                     &.control-item-share {
-                                        display: none !important;
+                                        .control-item-frame {
+                                            display: none !important;
+                                        }
                                     }
 
                                     .control-item-frame {
@@ -7148,8 +7159,9 @@ label.checksearch .caret {
                             }
                         }
                         .comment-buttons {
-                            bottom: 0;
-                            right: 0;
+                            bottom: 0 !important;
+                            right: 0 !important;
+                            top: 0 !important;
 
                             justify-content: center;
                             align-items: center;
@@ -7168,9 +7180,16 @@ label.checksearch .caret {
                                 align-items: center;
                                 justify-content: center;
 
+                                position: relative;
+                                min-height: 44px;
+
                                 margin: 0;
 
                                 color: @white !important;
+
+                                span {
+                                    display: none;
+                                }
 
                                 svg {
                                     height: 24px;
@@ -7180,6 +7199,12 @@ label.checksearch .caret {
                                     background-color: @action;
                                 }
                             }
+                        }
+                        .help-block {
+                            transform: translateY(-100%);
+                            position: absolute;
+                            left: 16px;
+                            top: -2px;
                         }
                     }
                 }
