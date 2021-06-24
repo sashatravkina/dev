@@ -6740,15 +6740,16 @@ label.checksearch .caret {
                 }
             }
             & > .wall-entry-controls {
-                align-items: center;
-                display: flex;
-
                 font-weight: 500;
                 font-size: 12px;
 
                 color: @lightGray;
 
                 @media @mobile {
+                    justify-content: space-between;
+                    -ms-flex-pack: justify;
+                    align-items: center;
+
                     margin-top: 12px;
                 }
                 @media @desktop {
@@ -6756,38 +6757,33 @@ label.checksearch .caret {
                     margin-top: 16px;
                 }
 
-                justify-content: space-between;
-                -ms-flex-pack: justify;
-                align-items: center;
                 display: flex;
 
                 .control-item {
-                    width: 33.3333333%;
-
-                    justify-content: center;
-                    display: flex;
-
                     position: relative;
 
-                    &:first-child {
-                        justify-content: end;
+                    display: flex;
+
+                    @media @mobile {
+                        width: 33.3333333%;
                     }
 
+                    padding-right: 16px;
+
+                    &:first-child {
+
+                    }
                     &:last-child {
-                        justify-content: flex-end;
-                        margin-right: unset;
+
                     }
 
                     &.control-item-like {
-                        justify-content: end;
                         order: 1;
                     }
                     &.control-item-comment {
-                        justify-content: center;
                         order: 2;
                     }
                     &.control-item-share {
-                        justify-content: flex-end;
                         order: 3;
                     }
 
@@ -7021,23 +7017,24 @@ label.checksearch .caret {
 
                                     width: 25rem;
                                 }
+                                @media @mobile {
+                                    justify-content: space-between;
+                                    -ms-flex-pack: justify;
+                                    align-items: center;
+                                }
 
-                                justify-content: space-between;
-                                -ms-flex-pack: justify;
-                                align-items: center;
                                 display: flex;
 
                                 .control-item {
-                                    justify-content: center;
                                     display: flex;
 
-                                    &:first-child {
-                                        justify-content: end;
-                                    }
+                                    padding-right: 16px;
 
+                                    &:first-child {
+
+                                    }
                                     &:last-child {
-                                        justify-content: flex-end;
-                                        margin-right: unset;
+                                        padding-right: unset;
                                     }
 
                                     &.control-item-share {
