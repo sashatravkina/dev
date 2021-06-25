@@ -105,7 +105,7 @@ html {
 }
 
 body {
-    color: @gray;
+    color: @black;
 
     font-family: @fontFamily;
     line-height: 1.4;
@@ -298,23 +298,53 @@ input, textarea {
     margin-bottom: 16px;
 }
 
+.dropdown {
+    position: relative;
+    z-index: 1000;
+
+    &.open {
+        .dropdown-toggle {
+            svg {
+                path {
+                    stroke: @info;
+                }
+            }
+        }
+    }
+
+    .dropdown-toggle {
+        position: relative;
+        z-index: 10;
+    }
+
+    .dropdown-menu {
+        z-index: 5;
+    }
+}
+
 .dropdown-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
     z-index: 1000;
+    left: 0;
+    top: 0;
+
     display: none;
     float: left;
+
+    padding-top: 25px;
     min-width: 160px;
-    padding: 5px 0;
     margin: 0;
+
     font-size: 14px;
+    font-weight: 600;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+
+    background-color: #F2F2F2;
     background-clip: padding-box;
-    border: none;
     border-radius: unset;
+    border: none;
+
     -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
@@ -326,6 +356,11 @@ input, textarea {
 
     li {
         a {
+            font-size: 14px !important;
+            font-weight: 600 !important;
+
+            color: @blue;
+
             .item {
                 align-items: center;
                 display: flex;
@@ -343,20 +378,24 @@ input, textarea {
                     }
                 }
             }
+
+            & > i {
+                min-width: 16px;
+                margin-right: 8px;
+
+                justify-content: end;
+                align-items: center;
+                display: flex;
+            }
         }
     }
-}
-
-.dropdown-menu li a {
-    font-size: 13px !important;
-    font-weight: 600 !important
 }
 
 .dropdown-menu li a i {
     margin-right: 5px;
     font-size: 14px;
     display: inline-block;
-    width: 14px
+    width: 14px;
 }
 
 .dropdown-menu li a:hover,
@@ -373,11 +412,11 @@ input, textarea {
 }
 
 .dropdown-menu li:first-child {
-    margin-top: 3px
+
 }
 
 .dropdown-menu li:last-child {
-    margin-bottom: 3px
+
 }
 
 .modal .dropdown-menu,
@@ -397,15 +436,15 @@ input, textarea {
 .modal .dropdown-menu li,
 .panel .dropdown-menu li,
 .nav-tabs .dropdown-menu li {
-    border-left: 3px solid white
+    border-left: 3px solid transparent;
 }
 
 .modal .dropdown-menu li a,
 .panel .dropdown-menu li a,
 .nav-tabs .dropdown-menu li a {
-    color: @font3;
+    color: @blue;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
     padding: 4px 15px
 }
 
@@ -480,7 +519,7 @@ ul.contextMenu li.selected {
 }
 
 .media-list li a {
-    color: @font3
+    color: @black;
 }
 
 .media-list .badge-space-type {
@@ -524,8 +563,8 @@ ul.contextMenu li.selected {
 }
 
 .media .time {
-    font-size: 11px;
-    color: @font4
+    font-size: 14px;
+    color: #707070;
 }
 
 .media .img-space {
@@ -536,7 +575,7 @@ ul.contextMenu li.selected {
 
 .media .media-body {
     overflow: hidden !important;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
 
     padding-bottom: 8px;
@@ -652,10 +691,12 @@ img {
 
 .panel .panel-heading {
     background-color: @white;
-    color: @lighterGray;
+    color: @black;
 
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
+
+    line-height: 1.4;
 
     padding: 16px 16px 0;
 
@@ -738,12 +779,22 @@ img {
 }
 
 .panel .panel-body {
-    font-size: 16px;
+    font-size: 15px;
     padding: 16px;
 }
 
 .panel .panel-body p {
-    color: @font3
+    color: @black;
+
+    a {
+        border-bottom: 1px solid @blue;
+        color: @blue;
+
+        &:hover {
+            border-bottom-color: @info;
+            color: @info;
+        }
+    }
 }
 
 .panel .panel-body .usersearch-statuses,
@@ -1273,7 +1324,7 @@ ul.tab-menu-settings li.active>a {
 .nav-pills .dropdown-menu,
 .nav-tabs .dropdown-menu,
 .account .dropdown-menu {
-    background-color: #f7f7f7;
+    background-color: #F2F2F2;
     border: none
 }
 
@@ -1292,15 +1343,15 @@ ul.tab-menu-settings li.active>a {
 .nav-pills .dropdown-menu li,
 .nav-tabs .dropdown-menu li,
 .account .dropdown-menu li {
-    border-left: 3px solid #f7f7f7
+    border-left: 3px solid transparent;
 }
 
 .nav-pills .dropdown-menu li a,
 .nav-tabs .dropdown-menu li a,
 .account .dropdown-menu li a {
-    color: @gray;
-    font-weight: 400;
-    font-size: 13px;
+    color: @blue;
+    font-weight: 600;
+    font-size: 15px;
     padding: 5px 16px
 }
 
@@ -2781,11 +2832,34 @@ table td a:hover {
 }
 
 .wall-entry .media-heading {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
 
-    margin-bottom: 0;
+    margin-bottom: 5px;
     color: @black;
+
+    a {
+        color: @black;
+
+        &:hover {
+            color: @gray;
+        }
+
+        &.wall-entry-container-link {
+            color: @blue;
+
+            &:hover {
+                color: @info;
+            }
+        }
+    }
+
+    .wall-entry-icons {
+        margin-right: 10px;
+        margin-left: 10px;
+
+        color: @blue;
+    }
 }
 
 .wall-entry .media-heading .labels {
@@ -2797,19 +2871,28 @@ table td a:hover {
 }
 
 .wall-entry .media-heading .viaLink i {
-    color: @font4;
+    padding-right: 4px;
     padding-left: 4px;
-    padding-right: 4px
+
+    color: #707070;
 }
 
 .wall-entry .media-subheading {
     color: @lightGray;
 
     font-weight: 500;
-    font-size: 12px;
+    font-size: 14px;
 
     a {
-        color: @lightGray;
+        color: #707070;
+
+        &.wall-entry-container-link {
+            color: @blue;
+
+            &:hover {
+                color: @info;
+            }
+        }
 
         &:hover {
             color: @gray;
@@ -2818,10 +2901,10 @@ table td a:hover {
 }
 
 .wall-entry .media-subheading .time {
-    font-size: 12px;
+    font-size: 14px;
     white-space: nowrap;
 
-    color: @lightGray;
+    color: #707070;
 }
 
 .wall-search {
@@ -3221,27 +3304,71 @@ table td a:hover {
     background-image: url("../img/mime/audio.png")
 }
 
-ul.tour-list {
+.tour-list {
     list-style: none;
     margin-bottom: 0;
-    padding-left: 10px
-}
+    margin-top: 20px;
+    padding-left: 0;
 
-ul.tour-list li {
-    padding-top: 5px
-}
+    li {
+        margin-bottom: 16px;
 
-ul.tour-list li a {
-    color: @info
-}
+        &:last-child {
+            margin-bottom: unset;
+        }
 
-ul.tour-list li a .fa {
-    width: 16px
-}
+        a {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 1.4;
 
-ul.tour-list li.completed a {
-    text-decoration: line-through;
-    color: @font4
+            color: @blue;
+
+            &:hover {
+                color: @info;
+
+                .item {
+                    .icon {
+                        svg {
+                            path {
+                                stroke: @info;
+                                fill: @info;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .item {
+            align-items: center;
+            display: flex;
+
+            .icon {
+                min-width: 16px;
+                margin-right: 8px;
+                justify-content: end;
+                align-items: center;
+                display: flex;
+            }
+        }
+
+        &.completed {
+            a {
+                color: #707070;
+
+                .item {
+                    .icon {
+                        svg {
+                            path {
+                                stroke: #707070;
+                                fill: #707070;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .atwho-view {
@@ -3333,7 +3460,7 @@ ul.tour-list li.completed a {
 }
 
 .atwho-placeholder {
-    color: @font4 !important
+    color: #707070 !important
 }
 
 .atwho-emoji-entry {
@@ -4472,9 +4599,14 @@ img.bounceIn {
 }
 
 .ProsemirrorEditor .ProseMirror .placeholder {
-    padding: 0px !important;
+    padding: 0 !important;
     pointer-events: none;
-    height: 0
+    height: unset;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: -21px;
 }
 
 .ProsemirrorEditor .ProseMirror:focus .placeholder {
@@ -5866,7 +5998,8 @@ ul.tag_input li img {
                             background-position: 16px 12px;
 
                             font-family: @fontFamily;
-                            font-weight: 400;
+                            font-weight: 500;
+                            font-size: 15px;
                         }
                     }
                 }
@@ -6041,7 +6174,6 @@ ul.tag_input li img {
 
                     a {
                         border-bottom: 1px solid #045269;
-                        display: inline-block;
                         color: #045269;
 
                         &:hover {
@@ -6708,15 +6840,13 @@ label.checksearch .caret {
         .stream-entry-addons {
             & > .well-small {
                 @media @desktop {
-                    border-top: 1px solid #F2F2F2;
-
                     margin-top: 16px;
                 }
                 @media @mobile {
                     border-top: 2px solid #F2F2F2;
 
-                    padding-top: 6px;
-                    margin-top: 12px;
+                    padding-top: unset;
+                    margin-top: 20px;
                 }
 
                 display: block !important;
@@ -6768,7 +6898,7 @@ label.checksearch .caret {
                         width: 33.3333333%;
                     }
 
-                    padding-right: 16px;
+                    padding-right: 20px;
 
                     &:first-child {
 
@@ -6815,7 +6945,7 @@ label.checksearch .caret {
                         }
 
                         a {
-                            font-size: 12px;
+                            font-size: 14px;
                             font-weight: 500;
                             color: @blue;
     
@@ -6845,10 +6975,14 @@ label.checksearch .caret {
             }
             & > .comment-container {
                 & > .comment {
+                    @media @desktop {
+                        border-bottom: 1px solid #ECECEC;
+                    }
+
                     & > .media {
                         @media @desktop {
-                            border-bottom: 1px solid #ECECEC;
-                            padding-bottom: 16px;
+                            margin-bottom: 16px;
+                            margin-top: 16px;
                         }
                     }
                 }
@@ -6857,11 +6991,8 @@ label.checksearch .caret {
             .comment-container {
                 .comment {
                     & > .media {
-                        @media @desktop {
-                            padding-top: 16px;
-                        }
                         @media @mobile {
-                            padding-top: 6px;
+                            padding-top: 10px;
                         }
                     }
                     .media {
@@ -6912,21 +7043,20 @@ label.checksearch .caret {
                                 overflow: hidden;
                                 max-width: 100%;
 
-                                font-weight: 400;
+                                font-weight: 500;
 
-                                font-size: 14px;
+                                font-size: 15px;
                                 line-height: 1.3;
 
                                 color: @black;
 
                                 a {
                                     border-bottom: 1px solid @blue;
-                                    display: inline-block;
                                     color: @blue;
 
                                     &:hover {
-                                        border-bottom-color: @black;
-                                        color: @black;
+                                        border-bottom-color: @info;
+                                        color: @info;
                                     }
                                 }
                             }
@@ -6950,8 +7080,37 @@ label.checksearch .caret {
                                 }
 
                                 .comment {
+                                    flex-direction: column;
+                                    display: flex;
+
+                                    .show-all-link {
+                                        order: 1;
+
+                                        border-bottom: unset;
+
+                                        margin-left: 96px;
+
+                                        @media @desktop {
+                                            margin-top: 16px;
+                                        }
+                                        @media @mobile {
+                                            margin-top: 10px;
+                                        }
+
+                                        padding-bottom: unset;
+                                        padding-top: unset;
+
+                                        svg {
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+
                                     .media {
-                                        margin-left: 49px;
+                                        margin-left: 48px;
+
+                                        @media @desktop {
+                                            margin-top: 16px;
+                                        }
 
                                         &:last-child {
                                             margin-bottom: unset;
@@ -6983,20 +7142,22 @@ label.checksearch .caret {
                                 @media @desktop {
                                     background-color: @subBackground;
 
-                                    padding-right: 8px;
-                                    padding-left: 8px;
-                                    padding-top: 8px;
+                                    padding-bottom: 14px;
+                                    padding-right: 10px;
+                                    padding-left: 10px;
+                                    padding-top: 10px;
                                 }
                             }
                             .content {
                                 @media @desktop {
                                     background-color: @subBackground;
 
-                                    padding-bottom: 8px;
-                                    padding-right: 8px;
-                                    padding-left: 8px;
-                                    padding-top: 8px;
-                                    margin-top: -8px;
+                                    padding-bottom: 14px;
+                                    padding-right: 10px;
+                                    padding-left: 10px;
+                                    padding-top: 14px;
+
+                                    margin-top: -14px;
                                 }
                             }
                             .wall-entry-controls {
@@ -7009,11 +7170,11 @@ label.checksearch .caret {
 
                                 @media @desktop {
                                     padding-bottom: 8px;
-                                    padding-right: 8px;
-                                    padding-left: 8px;
+                                    padding-right: 10px;
+                                    padding-left: 10px;
                                     padding-top: 8px;
 
-                                    margin-bottom: -8px;
+                                    margin-bottom: -10px;
 
                                     width: 25rem;
                                 }
@@ -7028,7 +7189,7 @@ label.checksearch .caret {
                                 .control-item {
                                     display: flex;
 
-                                    padding-right: 16px;
+                                    padding-right: 20px;
 
                                     &:first-child {
 
@@ -7059,8 +7220,8 @@ label.checksearch .caret {
                                             position: absolute;
                                             z-index: -10;
                                             bottom: -4px;
-                                            right: -8px;
-                                            left: -8px;
+                                            right: -10px;
+                                            left: -10px;
                                             top: -4px;
                                         }
                     
@@ -7071,7 +7232,7 @@ label.checksearch .caret {
                                         }
 
                                         a {
-                                            font-size: 12px;
+                                            font-size: 14px;
                                             font-weight: 500;
                                             color: @blue;
     
@@ -7100,19 +7261,42 @@ label.checksearch .caret {
                         }
                     }
                     .show-all-link {
-                        font-weight: 500;
+                        font-weight: 600;
                         font-size: 14px;
+                        line-height: 1.4;
                     
                         cursor: pointer;
 
-                        padding-bottom: 12px;
-                        padding-top: 12px;
+                        @media @desktop {
+                            padding-bottom: 12px;
+                            padding-top: 12px;
+                        }
+                        @media @mobile {
+                            padding-bottom: 10px;
+                            padding-top: 10px;
+                        }
 
                         border-bottom: 1px solid #ECECEC;
-                        color: #707070;
+                        color: @blue;
+
+                        svg {
+                            path {
+                                fill: @blue;
+                            }
+                        }
+
+                        span {
+                            margin-left: 12px;
+                        }
 
                         &:hover {
-                            color: #000000;
+                            color: @info;
+
+                            svg {
+                                path {
+                                    fill: @info;
+                                }
+                            }
                         }
                     }
                     .comments-start-separator {
@@ -7124,7 +7308,7 @@ label.checksearch .caret {
                         padding-top: 16px;
                     }
                     @media @mobile {
-                        padding-top: 6px;
+                        padding-top: 10px;
                     }
 
                     hr {
@@ -7144,14 +7328,24 @@ label.checksearch .caret {
                                 padding-left: 16px;
                                 padding-top: 12px;
 
+                                font-family: @fontFamily;
+                                font-weight: 500;
+                                font-size: 15px;
+
+                                &::placeholder {
+                                    color: #707070;
+                                }
+
                                 .placeholder {
                                     text-overflow: ellipsis;
                                     white-space: nowrap;
                                     overflow: hidden;
                                     display: block;
 
-                                    margin-bottom: -20px;
+                                    margin-bottom: -21px;
                                     height: unset;
+
+                                    color: #707070;
                                 }
                             }
                         }
