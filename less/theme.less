@@ -3289,27 +3289,71 @@ table td a:hover {
     background-image: url("../img/mime/audio.png")
 }
 
-ul.tour-list {
+.tour-list {
     list-style: none;
     margin-bottom: 0;
-    padding-left: 10px
-}
+    margin-top: 20px;
+    padding-left: 0;
 
-ul.tour-list li {
-    padding-top: 5px
-}
+    li {
+        margin-bottom: 16px;
 
-ul.tour-list li a {
-    color: @info
-}
+        &:last-child {
+            margin-bottom: unset;
+        }
 
-ul.tour-list li a .fa {
-    width: 16px
-}
+        a {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 1.4;
 
-ul.tour-list li.completed a {
-    text-decoration: line-through;
-    color: @font4
+            color: @blue;
+
+            &:hover {
+                color: @info;
+
+                .item {
+                    .icon {
+                        svg {
+                            path {
+                                stroke: @info;
+                                fill: @info;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .item {
+            align-items: center;
+            display: flex;
+
+            .icon {
+                min-width: 16px;
+                margin-right: 8px;
+                justify-content: end;
+                align-items: center;
+                display: flex;
+            }
+        }
+
+        &.completed {
+            a {
+                color: #707070;
+
+                .item {
+                    .icon {
+                        svg {
+                            path {
+                                stroke: #707070;
+                                fill: #707070;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .atwho-view {
