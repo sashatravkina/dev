@@ -6845,15 +6845,13 @@ label.checksearch .caret {
                 @media @mobile {
                     border-top: 2px solid #F2F2F2;
 
-                    padding-top: 6px;
-                    margin-top: 12px;
+                    padding-top: unset;
+                    margin-top: 20px;
                 }
 
                 display: block !important;
 
                 .comment-create {
-                    border-top: 1px solid #ECECEC;
-
                     align-items: center;
                     display: flex;
 
@@ -6977,6 +6975,10 @@ label.checksearch .caret {
             }
             & > .comment-container {
                 & > .comment {
+                    @media @desktop {
+                        border-bottom: 1px solid #ECECEC;
+                    }
+
                     & > .media {
                         @media @desktop {
                             padding-bottom: 16px;
@@ -6988,11 +6990,8 @@ label.checksearch .caret {
             .comment-container {
                 .comment {
                     & > .media {
-                        @media @desktop {
-                            padding-top: 16px;
-                        }
                         @media @mobile {
-                            padding-top: 6px;
+                            padding-top: 10px;
                         }
                     }
                     .media {
@@ -7052,12 +7051,11 @@ label.checksearch .caret {
 
                                 a {
                                     border-bottom: 1px solid @blue;
-                                    display: inline-block;
                                     color: @blue;
 
                                     &:hover {
-                                        border-bottom-color: @black;
-                                        color: @black;
+                                        border-bottom-color: @info;
+                                        color: @info;
                                     }
                                 }
                             }
@@ -7081,8 +7079,33 @@ label.checksearch .caret {
                                 }
 
                                 .comment {
+                                    flex-direction: column;
+                                    display: flex;
+
+                                    .show-all-link {
+                                        order: 1;
+
+                                        border-bottom: unset;
+
+                                        margin-left: 96px;
+
+                                        @media @desktop {
+                                            margin-top: 16px;
+                                        }
+                                        @media @mobile {
+                                            margin-top: 10px;
+                                        }
+
+                                        padding-bottom: unset;
+                                        padding-top: unset;
+
+                                        svg {
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+
                                     .media {
-                                        margin-left: 49px;
+                                        margin-left: 48px;
 
                                         &:last-child {
                                             margin-bottom: unset;
@@ -7239,8 +7262,14 @@ label.checksearch .caret {
                     
                         cursor: pointer;
 
-                        padding-bottom: 12px;
-                        padding-top: 12px;
+                        @media @desktop {
+                            padding-bottom: 12px;
+                            padding-top: 12px;
+                        }
+                        @media @mobile {
+                            padding-bottom: 10px;
+                            padding-top: 10px;
+                        }
 
                         border-bottom: 1px solid #ECECEC;
                         color: @blue;
@@ -7274,7 +7303,7 @@ label.checksearch .caret {
                         padding-top: 16px;
                     }
                     @media @mobile {
-                        padding-top: 6px;
+                        padding-top: 10px;
                     }
 
                     hr {
