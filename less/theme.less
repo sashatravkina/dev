@@ -4540,9 +4540,14 @@ img.bounceIn {
 }
 
 .ProsemirrorEditor .ProseMirror .placeholder {
-    padding: 0px !important;
+    padding: 0 !important;
     pointer-events: none;
-    height: 0
+    height: unset;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: -20px;
 }
 
 .ProsemirrorEditor .ProseMirror:focus .placeholder {
@@ -6110,7 +6115,6 @@ ul.tag_input li img {
 
                     a {
                         border-bottom: 1px solid #045269;
-                        display: inline-block;
                         color: #045269;
 
                         &:hover {
