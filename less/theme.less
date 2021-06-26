@@ -735,7 +735,7 @@ img {
         .list-group-item {
             margin-bottom: 0;
             margin-top: 0;
-            
+
             @media @mobile {
                 padding: 16px 16px 12px;
                 color: @blue;
@@ -765,7 +765,7 @@ img {
 
                     justify-content: end;
                     align-items: center;
-                    display: flex; 
+                    display: flex;
                 }
             }
         }
@@ -814,7 +814,7 @@ img {
 
 .panel .statistics .entry {
     @media @desktop {
-        margin-right: 40px; 
+        margin-right: 40px;
         font-size: 14px;
     }
     @media @mobile {
@@ -1023,7 +1023,7 @@ img {
     display: flex;
 
     @media @desktop {
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
 
         padding-left: 164px;
@@ -1055,7 +1055,7 @@ img {
     margin-right: -10px
 }
 
-.panel > .list-group:last-child .list-group-item:last-child, 
+.panel > .list-group:last-child .list-group-item:last-child,
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
     border-radius: unset;
 }
@@ -2161,7 +2161,7 @@ a.label-warning:hover {
 
     a {
         display: block;
-    
+
         span {
             display: block;
         }
@@ -5596,7 +5596,7 @@ ul.tag_input li img {
 
     .mobile-icon {
         display: flex;
-        align-items: center; 
+        align-items: center;
         flex-direction: column;
         justify-content: center;
 
@@ -5667,7 +5667,7 @@ ul.tag_input li img {
                 & > a,
                 & > label {
                     display: flex;
-                    align-items: center; 
+                    align-items: center;
                     flex-direction: column;
                     justify-content: center;
 
@@ -5677,17 +5677,17 @@ ul.tag_input li img {
                         cursor: default;
                         right: 12px;
                         top: 0;
-                    
+
                         background-color: @blue;
                         border-radius: 24px;
 
                         color: @white !important;
-                    
+
                         padding-bottom: 8px;
                         padding-right: 12px;
                         padding-left: 12px;
                         padding-top: 8px;
-                    
+
                         font-weight: 600;
                         font-size: 18px;
                         line-height: 1;
@@ -5892,7 +5892,7 @@ ul.tag_input li img {
                             margin-left: 0;
 
                             display: flex;
-                            align-items: center; 
+                            align-items: center;
                             justify-content: center;
                         }
                         .caret {
@@ -5929,6 +5929,9 @@ ul.tag_input li img {
 /* Mail */
 
 #mail-conversation-overview {
+    display: flex;
+    flex-flow: column nowrap;
+
     @media @desktop {
         height: calc(100vh - 26px - 26px);
         margin-bottom: unset;
@@ -5943,13 +5946,14 @@ ul.tag_input li img {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
-    
+
     #inbox {
         border-radius: unset;
-        max-height: unset;
+        max-height: 100%;
     }
 
     .panel-heading {
+        flex: 0;
         padding-bottom: 16px;
         padding-right: 16px;
         padding-left: 16px;
@@ -5963,7 +5967,7 @@ ul.tag_input li img {
                 padding-right: 16px;
                 padding-left: 16px;
                 padding-top: 10px;
-    
+
                 justify-content: center;
                 align-items: center;
                 display: flex;
@@ -5978,7 +5982,7 @@ ul.tag_input li img {
                 #mail-filter-menu {
                     .form-group {
                         margin-bottom: unset;
-                        
+
                         .form-control {
                             position: relative;
 
@@ -5986,7 +5990,7 @@ ul.tag_input li img {
 
                             border: 2px solid #EFEFEF;
                             border-radius: 24px;
-                            
+
                             padding-bottom: 20px;
                             padding-right: 20px;
                             padding-left: 48px;
@@ -6008,6 +6012,9 @@ ul.tag_input li img {
     }
 
     .inbox-wrapper {
+        flex: 1;
+        overflow: hidden;
+
         .media-list {
             li {
                 padding-bottom: 16px;
@@ -6054,7 +6061,7 @@ ul.tag_input li img {
         #conversationSettingsButton {
             background: transparent !important;
             color: #C4C4C4 !important;
-        
+
             i {
                 font-size: 20px;
             }
@@ -6094,7 +6101,7 @@ ul.tag_input li img {
                 color: @black;
 
                 display: block;
-                
+
                 a {
                     color: @black !important;
 
@@ -6153,7 +6160,7 @@ ul.tag_input li img {
                 overflow: unset;
                 width: fit-content;
                 float: unset !important;
-        
+
                 @media @desktop {
                     padding: 20px 25px;
                 }
@@ -6165,7 +6172,7 @@ ul.tag_input li img {
                 &.own {
                     margin-left: auto;
                 }
-        
+
                 p {
                     font-weight: 500;
                     font-size: 14px;
@@ -6193,12 +6200,12 @@ ul.tag_input li img {
             }
             .conversation-menu {
                 display: block !important;
-    
+
                 .conversation-menu-item {
                     margin-bottom: unset;
                     margin-right: unset;
                     margin-left: unset;
-    
+
                     .time {
                         color: #B2B1B1;
                     }
@@ -6291,7 +6298,7 @@ ul.tag_input li img {
 
                     border: 2px solid #EFEFEF;
                     border-radius: 24px;
-                    
+
                     padding-bottom: 20px;
                     padding-right: 20px;
                     padding-left: 48px;
@@ -6349,7 +6356,7 @@ ul.tag_input li img {
         .media {
             justify-content: center;
             align-items: center;
-            display: flex; 
+            display: flex;
 
             .media-avatar {
                 margin-right: 18px;
@@ -6396,7 +6403,7 @@ ul.tag_input li img {
 
                     border: 2px solid #EFEFEF;
                     border-radius: 24px;
-                    
+
                     padding-bottom: 20px;
                     padding-right: 20px;
                     padding-left: 48px;
@@ -6454,7 +6461,7 @@ ul.tag_input li img {
         .media {
             justify-content: center;
             align-items: center;
-            display: flex; 
+            display: flex;
 
             .media-avatar {
                 margin-right: 18px;
@@ -6505,7 +6512,7 @@ ul.tag_input li img {
 
                 border: 2px solid #EFEFEF;
                 border-radius: 24px;
-                
+
                 padding-bottom: 20px;
                 padding-right: 20px;
                 padding-left: 48px;
@@ -6566,7 +6573,7 @@ ul.tag_input li img {
 .section-space-page {
     .panel-profile {
         .panel-body {
-            .panel-profile-controls {                
+            .panel-profile-controls {
                 .controls-header {
                     .btn {
                         i {
@@ -6600,10 +6607,10 @@ ul.tag_input li img {
                     .search-menu {
                         .form-group {
                             margin-bottom: unset;
-                
+
                             .form-search {
                                 position: relative;
-                
+
                                 @media @mobile {
                                     background-color: #EFEFEF;
                                     border: 2px solid #EFEFEF;
@@ -6612,19 +6619,19 @@ ul.tag_input li img {
                                     background-color: @white;
                                     border: 2px solid @white;
                                 }
-                
+
                                 border-radius: 24px;
-                                
+
                                 padding-bottom: 20px;
                                 padding-right: 20px;
                                 padding-left: 48px;
                                 padding-top: 20px;
-                
+
                                 border-radius: 30px;
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M6.33621 0C2.84241 0 0 2.84241 0 6.33621C0 9.83001 2.84241 12.6724 6.33621 12.6724C9.83001 12.6724 12.6724 9.83001 12.6724 6.33621C12.6724 2.84241 9.82998 0 6.33621 0ZM6.33621 11.564C3.45352 11.564 1.10839 9.21891 1.10839 6.33621C1.10839 3.45352 3.45352 1.10839 6.33621 1.10839C9.21873 1.10839 11.564 3.45352 11.564 6.33621C11.564 9.21891 9.21891 11.564 6.33621 11.564Z' fill='%23B2B1B1'/%3E%3Cpath d='M14.8379 14.054L10.8108 10.0269C10.5943 9.81044 10.2436 9.81044 10.0271 10.0269C9.81062 10.2433 9.81062 10.5942 10.0271 10.8106L14.0542 14.8377C14.1625 14.9459 14.3042 15 14.4461 15C14.5879 15 14.7296 14.9459 14.8379 14.8377C15.0544 14.6213 15.0544 14.2704 14.8379 14.054Z' fill='%23B2B1B1'/%3E%3C/svg%3E");
                                 background-repeat: no-repeat;
                                 background-position: 16px 12px;
-                
+
                                 font-family: @fontFamily;
                                 font-weight: 400;
                             }
@@ -6635,18 +6642,18 @@ ul.tag_input li img {
                                 @media @desktop {
                                     background-color: #DDDCDB;
                                 }
-                
+
                                 padding-right: 24px;
                                 padding-left: 24px;
-                
+
                                 bottom: 0;
                                 right: 0;
                                 top: 0;
-                
+
                                 justify-content: center;
                                 align-items: center;
                                 display: flex;
-                
+
                                 &:hover {
                                     @media @mobile {
                                         background-color: #065f7a;
@@ -6701,10 +6708,10 @@ ul.tag_input li img {
                     .search-menu {
                         .form-group {
                             margin-bottom: unset;
-                
+
                             .form-search {
                                 position: relative;
-                
+
                                 @media @mobile {
                                     background-color: #EFEFEF;
                                     border: 2px solid #EFEFEF;
@@ -6713,19 +6720,19 @@ ul.tag_input li img {
                                     background-color: @white;
                                     border: 2px solid @white;
                                 }
-                
+
                                 border-radius: 24px;
-                                
+
                                 padding-bottom: 20px;
                                 padding-right: 20px;
                                 padding-left: 48px;
                                 padding-top: 20px;
-                
+
                                 border-radius: 30px;
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M6.33621 0C2.84241 0 0 2.84241 0 6.33621C0 9.83001 2.84241 12.6724 6.33621 12.6724C9.83001 12.6724 12.6724 9.83001 12.6724 6.33621C12.6724 2.84241 9.82998 0 6.33621 0ZM6.33621 11.564C3.45352 11.564 1.10839 9.21891 1.10839 6.33621C1.10839 3.45352 3.45352 1.10839 6.33621 1.10839C9.21873 1.10839 11.564 3.45352 11.564 6.33621C11.564 9.21891 9.21891 11.564 6.33621 11.564Z' fill='%23B2B1B1'/%3E%3Cpath d='M14.8379 14.054L10.8108 10.0269C10.5943 9.81044 10.2436 9.81044 10.0271 10.0269C9.81062 10.2433 9.81062 10.5942 10.0271 10.8106L14.0542 14.8377C14.1625 14.9459 14.3042 15 14.4461 15C14.5879 15 14.7296 14.9459 14.8379 14.8377C15.0544 14.6213 15.0544 14.2704 14.8379 14.054Z' fill='%23B2B1B1'/%3E%3C/svg%3E");
                                 background-repeat: no-repeat;
                                 background-position: 16px 12px;
-                
+
                                 font-family: @fontFamily;
                                 font-weight: 400;
                             }
@@ -6736,18 +6743,18 @@ ul.tag_input li img {
                                 @media @desktop {
                                     background-color: #DDDCDB;
                                 }
-                
+
                                 padding-right: 24px;
                                 padding-left: 24px;
-                
+
                                 bottom: 0;
                                 right: 0;
                                 top: 0;
-                
+
                                 justify-content: center;
                                 align-items: center;
                                 display: flex;
-                
+
                                 &:hover {
                                     @media @mobile {
                                         background-color: #065f7a;
@@ -6812,7 +6819,7 @@ label.checksearch .caret {
     box-shadow: 0 0 3px #dadada;
     -webkit-box-shadow: 0 0 3px #dadada;
     -moz-box-shadow: 0 0 3px #dadada;
-} 
+}
 #topbar-first #space-menu-dropdown .search-reset, #topbar-first #search-menu-dropdown .search-reset {
     position: absolute;
     color: #BFBFBF;
@@ -6927,9 +6934,9 @@ label.checksearch .caret {
                         &::before {
                             background-color: transparent;
                             border-radius: 24px;
-    
+
                             content: '';
-    
+
                             position: absolute;
                             z-index: -10;
                             bottom: -4px;
@@ -6937,7 +6944,7 @@ label.checksearch .caret {
                             left: -8px;
                             top: -4px;
                         }
-    
+
                         &:hover {
                             &::before {
                                 background-color: #F4F4F4;
@@ -6948,14 +6955,14 @@ label.checksearch .caret {
                             font-size: 14px;
                             font-weight: 500;
                             color: @blue;
-    
+
                             margin-bottom: 0;
-    
+
                             align-items: center;
                             display: flex;
-    
+
                             position: relative;
-    
+
                             span {
                                 margin-left: 4px;
                             }
@@ -7131,7 +7138,7 @@ label.checksearch .caret {
 
                             span {
                                 display: block;
-                                
+
                                 a {
                                     display: block;
                                 }
@@ -7207,16 +7214,16 @@ label.checksearch .caret {
                                     .control-item-frame {
                                         align-items: center;
                                         display: flex;
-                
+
                                         position: relative;
                                         z-index: 0;
-                
+
                                         &::before {
                                             background-color: transparent;
                                             border-radius: 24px;
-                    
+
                                             content: '';
-                    
+
                                             position: absolute;
                                             z-index: -10;
                                             bottom: -4px;
@@ -7224,7 +7231,7 @@ label.checksearch .caret {
                                             left: -10px;
                                             top: -4px;
                                         }
-                    
+
                                         &:hover {
                                             &::before {
                                                 background-color: #F4F4F4;
@@ -7235,12 +7242,12 @@ label.checksearch .caret {
                                             font-size: 14px;
                                             font-weight: 500;
                                             color: @blue;
-    
+
                                             margin-bottom: 0;
-    
+
                                             align-items: center;
                                             display: flex;
-    
+
                                             span {
                                                 margin-left: 4px;
                                             }
@@ -7264,7 +7271,7 @@ label.checksearch .caret {
                         font-weight: 600;
                         font-size: 14px;
                         line-height: 1.4;
-                    
+
                         cursor: pointer;
 
                         @media @desktop {
