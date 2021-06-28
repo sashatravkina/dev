@@ -28,34 +28,12 @@ $userModel = Yii::$app->user->identity;
         <?= $entries[0]->render() ?>
     <?php endif; ?>
 <?php else: ?>
-    <?= Html::beginTag('ul', $options) ?>
-        <li class="dropdown account">
-            <a href="#" id="account-dropdown-link" class="dropdown-toggle" data-toggle="dropdown" aria-label="<?= Yii::t('base', 'Profile dropdown') ?>">
-
-                <?php if ($this->context->showUserName): ?>
-                    <div class="user-title pull-left hidden-xs">
-                        <strong><?= Html::encode($userModel->displayName); ?></strong><br/><span class="truncate"><?= Html::encode($userModel->displayNameSub); ?></span>
-                    </div>
-                <?php endif; ?>
-
-                <?= Image::widget([
-                    'user' => $userModel,
-                    'link'  => false,
-                    'width' => 60,
-                    'htmlOptions' => [
-                    'id' => 'user-account-image',
-                 ]])?>
-
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu pull-right">
-                <?php foreach ($entries as $entry): ?>
-                    <?php if(!($entry instanceof DropdownDivider)) : ?><li><?php endif; ?>
-                        <?= $entry->render() ?>
-                    <?php if(!($entry instanceof DropdownDivider)) : ?></li><?php endif; ?>
-                <?php endforeach; ?>
-                <?= FooterMenu::widget(['location' => FooterMenu::LOCATION_ACCOUNT_MENU]); ?>
-            </ul>
-        </li>
-    <?= Html::endTag('ul') ?>
+    <ul>
+        <?php foreach ($entries as $entry): ?>
+            <?php if(!($entry instanceof DropdownDivider)) : ?><li class="menu-close"><?php endif; ?>
+                <?= $entry->render() ?>
+            <?php if(!($entry instanceof DropdownDivider)) : ?></li><?php endif; ?>
+        <?php endforeach; ?>
+        <?= FooterMenu::widget(['location' => FooterMenu::LOCATION_ACCOUNT_MENU]); ?>
+    </ul>
 <?php endif; ?>
