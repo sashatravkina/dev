@@ -6672,14 +6672,17 @@ label.checksearch .caret {
                             @media @mobile {
                                 background-color: @subBackground;
 
-                                padding-right: 14px;
-                                padding-left: 14px;
+                                padding-bottom: unset;
+                                padding-right: 10px;
+                                padding-left: 10px;
                                 padding-top: 12px;
                             }
 
                             .media-heading {
                                 font-weight: 600;
                                 font-size: 14px;
+
+                                margin-bottom: unset;
 
                                 a {
                                     color: @black;
@@ -6701,8 +6704,10 @@ label.checksearch .caret {
                             @media @mobile {
                                 background-color: @subBackground;
 
-                                padding-right: 14px;
-                                padding-left: 14px;
+                                padding-bottom: 12px;
+                                padding-right: 10px;
+                                padding-left: 10px;
+                                padding-top: 12px;
                             }
 
                             p {
@@ -6733,9 +6738,9 @@ label.checksearch .caret {
                                 background-color: @subBackground;
 
                                 padding-bottom: 8px;
-                                padding-right: 14px;
-                                padding-left: 14px;
-                                padding-top: 8px;
+                                padding-right: 10px;
+                                padding-left: 10px;
+                                padding-top: unset;
                             }
                         }
                         .nested-comments-root {
@@ -6809,7 +6814,7 @@ label.checksearch .caret {
                                 @media @desktop {
                                     background-color: @subBackground;
 
-                                    padding-bottom: 14px;
+                                    padding-bottom: 0;
                                     padding-right: 10px;
                                     padding-left: 10px;
                                     padding-top: 10px;
@@ -6821,9 +6826,53 @@ label.checksearch .caret {
                                 }
                             }
                             .content_edit {
-                                padding: 14px 10px;
-                                margin-top: -14px;
                                 background: #f4f4f4;
+                                position: unset;
+                                padding: unset;
+
+                                @media @desktop {
+                                    border-radius: 0 0 8px 8px;
+                                }
+
+                                .comment-create-input-group {
+                                    .form-group {
+                                        .ProsemirrorEditor {
+                                            .ProseMirror {
+                                                background: #ffffd5;
+
+                                                padding-right: 10px;
+                                                padding-left: 10px;
+
+                                                @media @desktop {
+                                                    padding-bottom: 14px;
+                                                    padding-top: 14px;
+                                                }
+                                                @media @mobile {
+                                                    padding-bottom: 12px;
+                                                    padding-top: 12px;
+                                                }
+
+                                                font-family: @fontFamily;
+
+                                                font-weight: 500;
+                                                font-size: 15px;
+                                                line-height: 1.3;
+                                            }
+                                        }
+                                    }
+                                    .comment-buttons {
+                                        position: unset;
+                                        bottom: unset;
+                                        right: unset;
+
+                                        .btn {
+                                            float: unset;
+                                        }
+                                        .btn-comment-submit {
+                                            margin-top: unset;
+                                        }
+                                    }
+                                }
                             }
                             .content {
                                 @media @desktop {
@@ -6833,8 +6882,6 @@ label.checksearch .caret {
                                     padding-right: 10px;
                                     padding-left: 10px;
                                     padding-top: 14px;
-
-                                    margin-top: -14px;
 
                                     border-radius: 0 0 8px 8px;
                                 }
@@ -6846,6 +6893,7 @@ label.checksearch .caret {
                                 color: @blue;
 
                                 margin-bottom: 0;
+                                width: 100%;
 
                                 @media @desktop {
                                     padding-bottom: 8px;
@@ -6854,15 +6902,13 @@ label.checksearch .caret {
                                     padding-top: 8px;
 
                                     margin-bottom: -10px;
-
-                                    width: 25rem;
                                 }
                                 @media @mobile {
                                     justify-content: space-between;
                                     -ms-flex-pack: justify;
                                     align-items: center;
 
-                                    border-radius: 8px 8px 0 0;
+                                    border-radius: 0 0 8px 8px;
                                 }
 
                                 display: flex;
