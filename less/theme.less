@@ -100,7 +100,6 @@
 
 
 html {
-    overflow-x: hidden;
     width: 100vw;
 }
 
@@ -119,6 +118,7 @@ body {
         background-color: @white;
     }
 
+    overflow-x: hidden;
     cursor: default;
 }
 
@@ -314,7 +314,7 @@ input, textarea {
     position: absolute;
     z-index: 1000;
     left: 0;
-    top: 1px;
+    top: 0;
 
     display: none;
     float: left;
@@ -2827,6 +2827,14 @@ table td a:hover {
 
 .wall-entry .well {
     margin-bottom: 0;
+}
+
+.wall-entry-header {
+    .dropdown {
+        .dropdown-menu {
+            top: 1px;
+        }
+    }
 }
 
 .wall-entry .media-heading {
@@ -6645,7 +6653,13 @@ label.checksearch .caret {
                     .media {
                         .nav-pills.preferences {
                             right: 0;
-                            top: unset;
+                            top: 0;
+
+                            .dropdown {
+                                .dropdown-menu {
+                                    top: 1px;
+                                }
+                            }
                         }
 
                         .media-body {
