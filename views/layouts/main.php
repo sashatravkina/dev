@@ -60,9 +60,9 @@
                     </div>
                     <?php if (Yii::$app->user->isGuest): ?>
                     <?php else: ?>
-                        <div class="account">
+                        <div class="account" id="account-top-menu" data-menu-id="account-top-menu">
                             <div class="avatar-frame" id="toggle-menu">
-                                <div class="avatar toggle-menu">
+                                <div class="avatar toggle-menu" id="account-dropdown-link">
                                     <?= Image::widget([
                                         'user' => $userModel,
                                         'link'  => false,
