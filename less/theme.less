@@ -5802,8 +5802,8 @@ ul.tag_input li img {
             }
 
             .conversation-entry-content {
-                background-color: @action;
-                border-radius: unset;
+                background-color: #a3d1d8;
+                border-radius: 8px;
 
                 overflow: unset;
                 width: fit-content;
@@ -6799,6 +6799,12 @@ label.checksearch .caret {
                             }
                         }
                         .comment-frame-body {
+                            @media @mobile {
+                                border-radius: 8px;
+                                position: relative;
+                                overflow: hidden;
+                            }
+
                             .media-body {
                                 @media @desktop {
                                     background-color: @subBackground;
@@ -6807,6 +6813,8 @@ label.checksearch .caret {
                                     padding-right: 10px;
                                     padding-left: 10px;
                                     padding-top: 10px;
+
+                                    border-radius: 8px 8px 0 0;
                                 }
                             }
                             .content_edit {
@@ -6824,6 +6832,8 @@ label.checksearch .caret {
                                     padding-top: 14px;
 
                                     margin-top: -14px;
+
+                                    border-radius: 0 0 8px 8px;
                                 }
                             }
                             .wall-entry-controls {
