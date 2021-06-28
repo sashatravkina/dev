@@ -6652,8 +6652,14 @@ label.checksearch .caret {
                     }
                     .media {
                         .nav-pills.preferences {
-                            right: 0;
-                            top: 0;
+                            @media @desktop {
+                                right: 0;
+                                top: 0;
+                            }
+                            @media @mobile {
+                                right: 0;
+                                top: 10px;
+                            }
 
                             .dropdown {
                                 .dropdown-menu {
@@ -6799,12 +6805,6 @@ label.checksearch .caret {
                             }
                         }
                         .comment-frame-body {
-                            @media @mobile {
-                                border-radius: 8px;
-                                position: relative;
-                                overflow: hidden;
-                            }
-
                             .media-body {
                                 @media @desktop {
                                     background-color: @subBackground;
@@ -6814,6 +6814,9 @@ label.checksearch .caret {
                                     padding-left: 10px;
                                     padding-top: 10px;
 
+                                    border-radius: 8px 8px 0 0;
+                                }
+                                @media @mobile {
                                     border-radius: 8px 8px 0 0;
                                 }
                             }
@@ -6858,6 +6861,8 @@ label.checksearch .caret {
                                     justify-content: space-between;
                                     -ms-flex-pack: justify;
                                     align-items: center;
+
+                                    border-radius: 8px 8px 0 0;
                                 }
 
                                 display: flex;
