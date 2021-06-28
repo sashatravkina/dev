@@ -1,6 +1,3 @@
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 <!-- start: Web App Data-->
 <link rel="manifest" href="<?= $this->theme->getBaseUrl(); ?>/ico/manifest.json">
 <meta name="application-name" content="<?= \yii\helpers\Html::encode(Yii::$app->name) ?>">
