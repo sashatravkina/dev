@@ -89,10 +89,21 @@ body.tour-interface-element {
         padding: unset !important;
 
         margin-bottom: unset;
-        margin-top: 84px;
+        margin-top: 48px;
 
         .btn-group {
+            width: 100%;
 
+            margin-right: auto;
+            margin-left: auto;
+
+            justify-content: space-between;
+            -ms-flex-pack: justify;
+            display: flex;
+
+            @media @desktop {
+                max-width: 60%;
+            }
         }
 
         .btn {
@@ -122,16 +133,12 @@ body.tour-interface-element {
             }
 
             &.btn-prev {
-                margin-right: 40px;
-
                 &::before {
                     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='16' viewBox='0 0 11 16' fill='none'%3E%3Cpath d='M0.633708 7.56877C0.243183 7.9593 0.243183 8.59246 0.633708 8.98299L6.99767 15.3469C7.38819 15.7375 8.02136 15.7375 8.41188 15.3469C8.80241 14.9564 8.80241 14.3233 8.41188 13.9327L2.75503 8.27588L8.41188 2.61903C8.80241 2.2285 8.80241 1.59534 8.41188 1.20481C8.02136 0.814287 7.38819 0.814287 6.99767 1.20481L0.633708 7.56877ZM10.8655 7.27588L1.34081 7.27588V9.27588L10.8655 9.27588V7.27588Z' fill='white'/%3E%3C/svg%3E");
                     margin-right: 8px;
                 }
             }
             &.btn-next {
-                margin-left: 40px;
-
                 &::after {
                     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='16' viewBox='0 0 11 16' fill='none'%3E%3Cpath d='M10.5411 8.98299C10.9316 8.59246 10.9316 7.9593 10.5411 7.56877L4.17714 1.20481C3.78661 0.814287 3.15345 0.814287 2.76292 1.20481C2.3724 1.59534 2.3724 2.2285 2.76292 2.61903L8.41978 8.27588L2.76292 13.9327C2.3724 14.3233 2.3724 14.9564 2.76292 15.3469C3.15345 15.7375 3.78661 15.7375 4.17714 15.3469L10.5411 8.98299ZM0.309326 9.27588L9.83399 9.27588L9.83399 7.27588L0.309326 7.27588L0.309326 9.27588Z' fill='white'/%3E%3C/svg%3E");
                     margin-left: 8px;
@@ -153,5 +160,9 @@ body.tour-interface-element {
                 pointer-events: none !important;
             }
         }
+    }
+    .close {
+        padding-left: 12px;
+        font-size: 26px;
     }
 }

@@ -2258,7 +2258,8 @@ a.list-group-item.active:focus {
 }
 
 .modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50040 !important;
 }
 
 .modal-dialog.fadeIn,
@@ -2266,6 +2267,10 @@ a.list-group-item.active:focus {
     -webkit-animation-duration: 200ms;
     -moz-animation-duration: 200ms;
     animation-duration: 200ms
+}
+
+.modal-open .modal {
+    z-index: 50041 !important;
 }
 
 body.modal-open {

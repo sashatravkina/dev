@@ -55,7 +55,8 @@ class TourAsset extends AssetBundle
             'completedUrl' => Url::to(['/tour/tour/tour-completed']),
             'template' => '
                 <div class="popover tour" role="tooltip">
-                    <div class="arrow"></div>
+                    <button aria-hidden="true" data-role="end" class="close" type="button">×</button>
+
                     <h3 class="popover-title"></h3>
                     <div class="popover-content"></div>
                     <div class="popover-navigation">
@@ -63,7 +64,6 @@ class TourAsset extends AssetBundle
                             <button class="btn btn-sm btn-default btn-prev" data-role="prev">'.Yii::t('custom', 'Назад').'</button>
                             <button class="btn btn-sm btn-default btn-next" data-role="next">'.Yii::t('custom', 'Вперед').'</button>
                         </div>
-                        <button class="btn btn-sm btn-default btn-end" data-role="end">'.Yii::t('TourModule.base', 'End guide').'</button>
                     </div>
                 </div>'
         ]);

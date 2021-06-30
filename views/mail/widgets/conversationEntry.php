@@ -22,13 +22,13 @@ $userModel = Yii::$app->user->identity;
 
 <div class="media">
     <?php if(!$isOwnMessage) : ?>
-        <div class="author-image pull-left hidden-xs">
+        <div class="author-image pull-left">
             <?= Image::widget(['user' => $entry->user, 'width' => 40]) ?>
         </div>
     <?php endif; ?>
 
     <?php if($isOwnMessage) : ?>
-        <div class="author-image pull-right hidden-xs">
+        <div class="author-image pull-right">
             <?= Image::widget(['user' => $userModel, 'link'  => false, 'width' => 40, 'htmlOptions' => ['id' => 'user-account-image',]])?>
         </div>
     <?php endif; ?>
