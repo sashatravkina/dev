@@ -7,9 +7,9 @@ $(document).ready(function () {
     });
     $(".mobile-navigation .mobile-close").click(function () {
         $(".mobile-navigation").removeClass("expanded");
-    });
-    $(".mobile-navigation .mobile-close").click(function () {
-        $(".account-menu").removeClass("expanded");
+        $('.account-menu').removeClass('expanded');
+        $('.toggle-menu').removeClass('expanded');
+        $('#toggle-menu').removeClass('toggle-close');
     });
 });
 
@@ -54,6 +54,8 @@ $('.sidebar .topbar-frame .topbar').scroll(function () {
         $('#toggle-menu').removeClass('toggle-close');
     }
 });
+
+/* Apple fix */
 
 function setDocHeight() {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
