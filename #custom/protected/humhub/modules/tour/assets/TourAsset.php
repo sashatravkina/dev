@@ -55,7 +55,7 @@ class TourAsset extends AssetBundle
             'completedUrl' => Url::to(['/tour/tour/tour-completed']),
             'template' => '
                 <div class="popover tour" role="tooltip">
-                    <button aria-hidden="true" data-role="end" class="close" type="button">×</button>
+                    <button aria-hidden="true" data-role="end" class="close" type="button"></button>
 
                     <h3 class="popover-title"></h3>
                     <div class="popover-content"></div>
