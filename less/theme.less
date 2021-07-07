@@ -105,6 +105,7 @@ body {
 } 
 
 html {
+    scroll-behavior: smooth;
     width: 100vw;
 }
 
@@ -2400,6 +2401,9 @@ body.modal-open {
     background-color: #d7d7d7
 }
 
+.tooltip {
+    z-index: 50070 !important;
+}
 .tooltip-inner {
     background-color: @primary;
     max-width: 400px;
@@ -4861,11 +4865,6 @@ img.bounceIn {
         border-radius: 10px;
         background-color: @white
     }
-    #layout-content>.container {
-        padding-right: 2px !important;
-        padding-left: 2px !important;
-        overflow-x: hidden
-    }
     #layout-content .layout-nav-container .panel-heading {
         display: none
     }
@@ -4990,6 +4989,9 @@ img.bounceIn {
     }
 }
 
+.select2-container {
+    z-index: 50200;
+}
 .select2-container--humhub {
     display: block
 }

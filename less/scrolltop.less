@@ -1,0 +1,47 @@
+.s2_stream {
+    position: relative;
+
+    .go-top {
+        position: sticky;
+        bottom: 14px;
+        right: 0;
+        left: 0;
+
+        margin-right: auto;
+        margin-left: auto;
+        width: fit-content;
+
+        z-index: 10000;
+
+        &:hover {
+            a {
+                background-color: lighten(@blue, 5%);
+            }
+        }
+
+        a {
+            padding-bottom: 12px;
+            padding-right: 24px;
+            padding-left: 24px;
+            padding-top: 12px;
+
+            border-radius: 24px;
+            background-color: @blue;
+            color: @white;
+
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.2;
+
+            cursor: pointer;
+
+            svg {
+                margin-right: 8px;
+            }
+        }
+    }
+}
